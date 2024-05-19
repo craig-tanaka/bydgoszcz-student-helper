@@ -1,0 +1,9 @@
+html{
+        background-image: url('./img/pexels-festus-obi-30040337-10743369.jpg');
+        background-size: cover;
+        background-position: bottom center;
+
+
+        background-color: rgba(8, 27, 65, 0.438);
+        background-blend-mode: multiply;
+}
