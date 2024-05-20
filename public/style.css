@@ -9,6 +9,15 @@ html {
         font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
+form{
+        background-color: rgba(255, 255, 255, 0.589);
+        width: max-content;
+        max-width: 90vw;
+        margin: 2rem auto;
+        padding: 1rem;
+        border-radius: 0.5rem;
+}
+
 
 .subtext {
         font-size: .8em
@@ -17,9 +26,12 @@ html {
 .hidden {
         display: none;
 }
+.button-row{
+        display: flex;
+}
 
 #message {
-        background: white;
+        background: rgba(255, 255, 255, 0.712);
         max-width: 360px;
         margin: 100px auto 16px;
         padding: 32px 24px;
@@ -44,23 +56,34 @@ html {
         line-height: 140%;
         margin: 16px 0 24px;
         font-size: 14px;
+        text-align: justify;
 }
 
-#message a {
+#message button {
         display: block;
         text-align: center;
         background: #039be5;
         text-transform: uppercase;
-        text-decoration: none;
         color: white;
         padding: 16px;
         border-radius: 4px;
+        margin: 0 auto;
+        border: none;
+        cursor: pointer;
+}
+#message p{
+        margin-bottom: 0;
 }
 
 #message,
-#message a {
+#message button {
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
+
+#message .message-language-select > p{
+        margin-bottom: 1rem;
+}
+
 
 @media (max-width: 600px) {
 
