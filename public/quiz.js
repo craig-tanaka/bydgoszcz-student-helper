@@ -1,37 +1,35 @@
-document.addEventListener('DOMContentLoaded', function () {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+// Initialize Firebase and Firestore
+const db = firebase.firestore()
 
-        try {
-                let app = firebase.app();
-                let features = [
-                        'auth',
-                        'database',
-                        'firestore',
-                        'functions',
-                        'messaging',
-                        'storage',
-                        'analytics',
-                        'remoteConfig',
-                        'performance',
-                ].filter(feature => typeof app[feature] === 'function');
-                loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-                console.error(e);
-                loadEl.textContent =
-                        'Error loading the Firebase SDK, check the console.';
-        }
-});
+console.log(db)
+
+
+
+const quizSubmitBtn = document.querySelector('form.quiz input[type=submit]')
+quizSubmitBtn.addEventListener('click', (event) => {
+        event.preventDefault()
+        db.collection("research-quiz-en").add({
+                        qn1 : document.querySelector('form.quiz input[name=qn1]').value,
+                        qn2 : document.querySelector('form.quiz input[name=qn2]').value,
+                        qn3 : document.querySelector('form.quiz input[name=qn3]').value,
+                        qn4 : document.querySelector('form.quiz input[name=qn4]').value,
+                        qn5 : document.querySelector('form.quiz input[name=qn5]').value,
+                        qn6 : document.querySelector('form.quiz input[name=qn6]').value,
+                        qn7 : document.querySelector('form.quiz input[name=qn7]').value,
+                        qn8 : document.querySelector('form.quiz input[name=qn8]').value,
+                        qn9 : document.querySelector('form.quiz input[name=qn9]').value,
+                        qn10 : document.querySelector('form.quiz input[name=qn10]').value,
+                        qn11 : document.querySelector('form.quiz input[name=qn11]').value,
+                        qn12 : document.querySelector('form.quiz input[name=qn12]').value,
+                        qn13 : document.querySelector('form.quiz input[name=qn13]').value,
+                        qn14 : document.querySelector('form.quiz input[name=qn14]').value,
+                        qn15 : document.querySelector('form.quiz input[name=qn15]').value
+                })
+                .then((docRef) => {
+                        console.log("Document written with ID: ", docRef.id);
+                        alert('Answers submitted')
+                })
+                .catch((error) => {
+                        console.error("Error adding document: ", error);
+                });
+})
