@@ -12,3 +12,7 @@ html{
 .subtext{
         font-size: .8em
 }
+
+.hidden{
+        display: none;
+}
