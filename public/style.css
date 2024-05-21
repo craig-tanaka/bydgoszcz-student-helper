@@ -1,5 +1,13 @@
-*{
+*,textarea {
         box-sizing: border-box;
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight:300;
+        font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6{
+        font-weight: 600;
 }
 
 
@@ -65,8 +73,10 @@ em.quiz-progress {
 }
 
 
-.subtext {
-        font-size: .8em
+.subtext, em.quiz-progress {
+        font-size: .8em;
+        font-weight: 300;
+        font-style: italic;
 }
 
 .hidden {
@@ -87,14 +97,12 @@ em.quiz-progress {
 
 #message h2 {
         color: #ffa100;
-        font-weight: bold;
         font-size: 16px;
         margin: 0 0 8px;
 }
 
 #message h1 {
         font-size: 22px;
-        font-weight: 300;
         color: rgba(0, 0, 0, 0.6);
         margin: 0 0 16px;
 }
@@ -118,6 +126,7 @@ input[type=submit] {
         margin: 0 auto;
         border: none;
         cursor: pointer;
+        font-weight: 800;
 }
 
 #message p {
@@ -132,4 +141,3 @@ input[type=submit] {
 #message .message-language-select>p {
         margin-bottom: 1rem;
 }
-

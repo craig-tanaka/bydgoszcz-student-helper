@@ -2,6 +2,11 @@
 const db = firebase.firestore()
 quizTracker = 0;
 
+// prevent flash of unstyle content
+window.addEventListener('load', ev => {
+        document.querySelector('body').classList.remove('hidden')
+})
+
 // adds resizer event to textareas to keep the user input box as big as the user's input
 document.querySelectorAll('form textarea').forEach(textarea => {
         textarea.addEventListener('input', event => {
