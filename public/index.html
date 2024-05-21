@@ -30,31 +30,59 @@
 
 <body>
         <div id="message">
-                <div class="starting-message">
-                        <h1>Welcome to Bydgoszcz Student Helper</h1>
-                        <p>
-                                Our Goal is to help foreign students prepare and inturn better acclimate to university life in
-                                Bydgoszcz or Poland in general. <br>
-                                Your answers here will help us tailor our webapp and make it more relevant and useful to fututre
-                                students like you.
-                        </p>
-                        <button id="message-begin-btn">Begin Quiz</button>
-                        <em class="subtext">The Quiz is anonymous and you will not need to provide personal information</em>
-                </div>
-
-                <div class="message-language-select hidden">
+                <div class="message-language-select">
                         <p>Please Select Your Language | виберіть свою мову</p>
                         <span class="button-row">
                                 <button class="en">English</button>
                                 <button class="uk">українська</button>
                         </span>
                 </div>
+                <div class="starting-message en hidden">
+                        <h1>Welcome to Bydgoszcz Student Helper</h1>
+                        <p>
+                                Our Goal is to help foreign students prepare and inturn better acclimate to university
+                                life in
+                                Bydgoszcz or Poland in general. <br>
+                                Your answers here will help us tailor our webapp and make it more relevant and useful to
+                                fututre
+                                students like you.
+                        </p>
+                        <button id="message-begin-btn">Begin Quiz</button>
+                        <em class="subtext">The Quiz is anonymous and you will not need to provide personal
+                                information</em>
+                </div>
+                <div class="starting-message uk hidden">
+                        <h1>Ласкаво просимо в Bydgoszcz Student Helper</h1>
+                        <p>
+                                Наша мета – допомогти іноземним студентам підготуватися та краще звикнути до
+                                університетського життя
+                                Бидгощ чи взагалі Польща. <br>
+                                Ваші відповіді допоможуть нам адаптувати нашу веб-програму та зробити її більш
+                                актуальною та корисною для майбутнього
+                                такі студенти, як ти.
+                        </p>
+                        <button id="message-begin-btn">Розпочати вікторину</button>
+                        <em class="subtext">Вікторина є анонімною, і вам не потрібно буде надавати особисту інформацію</em>
+                </div>
 
-                <div class="finishing-message hidden">
+
+                <div class="finishing-message en hidden">
                         <h1>Thank You For Your Contribution</h1>
                         <p>
-                                Thank you so much for taking the time to complete our quiz! Your participation and insights are incredibly valuable to us. Your feedback helps us improve and create even better content in the future. <br><br>
+                                Thank you so much for taking the time to complete our quiz! Your participation and
+                                insights are incredibly valuable to us. Your feedback helps us improve and create even
+                                better content in the future. <br><br>
                                 If you have any comments or suggestions, please feel free to share them with us.
+                        </p>
+                </div>
+                <div class="finishing-message uk hidden">
+                        <h1>Дякуємо за ваш внесок</h1>
+                        <p>
+                                Щиро дякуємо, що знайшли час, щоб виконати нашу вікторину! Ваша участь і ідеї неймовірно
+                                цінні для нас. Ваші відгуки допомагають нам покращувати та створювати ще кращий вміст у
+                                майбутньому.
+                                <br><br>
+                                Якщо у вас є коментарі чи пропозиції, будь ласка, поділіться ними з нами.
                         </p>
                 </div>
         </div>
@@ -63,150 +91,168 @@
                 <div class="form-row">
                         <label for="qn1">What single object you bring with you to university from home was
                                 most useful?</label>
-                        <input type="text" name="qn1" id="">
+                        <textarea name="qn1"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn2">What locations in Bydgoszcz do you think are the most important for
                                 a student?</label>
-                        <input type="text" name="qn2" id="">
+                        <textarea name="qn2"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn3">What was the most important thing that helped you get through
                                 your first years?</label>
-                        <input type="text" name="qn3" id="">
+                        <textarea name="qn3"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn4">What where the things that made it hard for you in your first years?</label>
-                        <input type="text" name="qn4" id="">
+                        <textarea name="qn4"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn5">Was there an object you left/forget at home, that you figured out at
                                 Uni was really essential or useful. If so what it is it?</label>
-                        <input type="text" name="qn5" id="">
+                        <textarea name="qn5"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn6">What other aspects of university life do you wish you had been better
                                 prepared for?</label>
-                        <input type="text" name="qn6" id="">
+                        <textarea name="qn6"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn7">How did you manage your time between academic responsibilities, social
                                 activities and a job (if applicable)</label>
-                        <input type="text" name="qn7" id="">
+                        <textarea name="qn7"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn8">What strategies did you use to cope with stress maintain your mental
                                 well-being?</label>
-                        <input type="text" name="qn8" id="">
+                        <textarea name="qn8"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn9">How important was it for you to have access to mentorship or
                                 guidance from older students or faculty members?</label>
-                        <input type="text" name="qn9" id="">
+                        <textarea name="qn9"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn10">What role did extracurricular activities or campus involvement play in
                                 your overall university experience?</label>
-                        <input type="text" name="qn10" id="">
+                        <textarea name="qn10"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn11">How did you go about selecting your courses and deciding on a major
                                 or academic path?</label>
-                        <input type="text" name="qn11" id="">
+                        <textarea name="qn11"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn12">What were some of the biggest misconceptions you had about
                                 university life before starting?</label>
-                        <input type="text" name="qn12" id="">
+                        <textarea name="qn12"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn13">How did you handle academic challenges such as difficult courses or
                                 exams?</label>
-                        <input type="text" name="qn13" id="">
+                        <textarea name="qn13"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn14">What techniques and resources to you use to study and succeed
                                 academic?</label>
-                        <input type="text" name="qn14" id="">
+                        <textarea name="qn14"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn15">How did you establish a support network or community at your
                                 university?</label>
-                        <input type="text" name="qn15" id="">
+                        <textarea name="qn15"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn16">What advice would you give to incoming students to help them
                                 prepare for university life and academics?</label>
-                        <input type="text" name="qn16" id="">
+                        <textarea name="qn16"></textarea>
                 </div>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Next Question">
+                <div class="progress-cont">
+                        <em class="quiz-progress">6%</em>
+                </div>
         </form>
         <form class="quiz uk hidden">
                 <div class="form-row">
-                        <label for="qn1">Який один найкорисніший предмет Ви приносите з собою з дому до університету?</label>
-                        <input type="text" name="qn1" id="">
+                        <label for="qn1">Який один найкорисніший предмет Ви приносите з собою з дому до
+                                університету?</label>
+                        <textarea name="qn1"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn2">Яку локацію в Бидгощі Ви вважаєте найбільш популярною серед студентів?</label>
-                        <input type="text" name="qn2" id="">
+                        <textarea name="qn2"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn3">Що Вам допомагало в Ваш перший рік навчання?</label>
-                        <input type="text" name="qn3" id="">
+                        <textarea name="qn3"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn4">Що було найскладнішим в Ваш перший рік навчання?</label>
-                        <input type="text" name="qn4" id="">
+                        <textarea name="qn4"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn5">Чи був предмет, який Ви залишили або забули вдома, але потім зрозуміли, що він був насправді необхідним чи корисним на лекціях? Якщо так, то що це за предмет?</label>
-                        <input type="text" name="qn5" id="">
+                <div class="form-row hidden">
+                        <label for="qn5">Чи був предмет, який Ви залишили або забули вдома, але потім зрозуміли, що він
+                                був насправді необхідним чи корисним на лекціях? Якщо так, то що це за предмет?</label>
+                        <textarea name="qn5"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn6">За якими іншими аспектами університетського життя Ви бажали б бути краще підготовленими?</label>
-                        <input type="text" name="qn6" id="">
+                <div class="form-row hidden">
+                        <label for="qn6">За якими іншими аспектами університетського життя Ви бажали б бути краще
+                                підготовленими?</label>
+                        <textarea name="qn6"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn7">Як Ви розподіляли час між академічними обов’язками, соціальною діяльністю та роботою (якщо працюєте)?</label>
-                        <input type="text" name="qn7" id="">
+                <div class="form-row hidden">
+                        <label for="qn7">Як Ви розподіляли час між академічними обов’язками, соціальною діяльністю та
+                                роботою (якщо працюєте)?</label>
+                        <textarea name="qn7"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn8">Які стратегії Ви використовували, щоб подолати стрес та підтримати своє психічне здоров'я?</label>
-                        <input type="text" name="qn8" id="">
+                <div class="form-row hidden">
+                        <label for="qn8">Які стратегії Ви використовували, щоб подолати стрес та підтримати своє
+                                психічне здоров'я?</label>
+                        <textarea name="qn8"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn9">Наскільки важливим для Вас було мати доступ до наставництва або підказки від старших студентів чи викладачів?</label>
-                        <input type="text" name="qn9" id="">
+                <div class="form-row hidden">
+                        <label for="qn9">Наскільки важливим для Вас було мати доступ до наставництва або підказки від
+                                старших студентів чи викладачів?</label>
+                        <textarea name="qn9"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn10">Яку роль відігравали позакласні заходи або участь у житті кампусу у Вашому загальному університетському досвіді?</label>
-                        <input type="text" name="qn10" id="">
+                <div class="form-row hidden">
+                        <label for="qn10">Яку роль відігравали позакласні заходи або участь у житті кампусу у Вашому
+                                загальному університетському досвіді?</label>
+                        <textarea name="qn10"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn11">Як Ви обрали свій курс та визначилися зі спеціальністю або академічним шляхом?</label>
-                        <input type="text" name="qn11" id="">
+                <div class="form-row hidden">
+                        <label for="qn11">Як Ви обрали свій курс та визначилися зі спеціальністю або академічним
+                                шляхом?</label>
+                        <textarea name="qn11"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn12">Які були найбільші хибні уявлення у Вас про університетське життя перед початком навчання?</label>
-                        <input type="text" name="qn12" id="">
+                <div class="form-row hidden">
+                        <label for="qn12">Які були найбільші хибні уявлення у Вас про університетське життя перед
+                                початком навчання?</label>
+                        <textarea name="qn12"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn13">Як Ви справлялися з академічними викликами, такими як складні курси або іспити?</label>
-                        <input type="text" name="qn13" id="">
+                <div class="form-row hidden">
+                        <label for="qn13">Як Ви справлялися з академічними викликами, такими як складні курси або
+                                іспити?</label>
+                        <textarea name="qn13"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn14">Які методи та ресурси Ви використовуєте, щоб навчатися та досягати успіху в університеті?</label>
-                        <input type="text" name="qn14" id="">
+                <div class="form-row hidden">
+                        <label for="qn14">Які методи та ресурси Ви використовуєте, щоб навчатися та досягати успіху в
+                                університеті?</label>
+                        <textarea name="qn14"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row hidden">
                         <label for="qn15">Як Ви створили мережу підтримки або спільноту у своєму університеті?</label>
-                        <input type="text" name="qn15" id="">
+                        <textarea name="qn15"></textarea>
                 </div>
-                <div class="form-row">
-                        <label for="qn16">Які поради Ви б дали новим студентам, щоб допомогти їм підготуватися до університетського життя?</label>
-                        <input type="text" name="qn16" id="">
+                <div class="form-row hidden">
+                        <label for="qn16">Які поради Ви б дали новим студентам, щоб допомогти їм підготуватися до
+                                університетського життя?</label>
+                        <textarea name="qn16"></textarea>
                 </div>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Наступне питання">
+                <div class="progress-cont">
+                        <em class="quiz-progress">6%</em>
+                </div>
         </form>
 </body>
 

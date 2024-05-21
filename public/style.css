@@ -1,21 +1,67 @@
+*{
+        box-sizing: border-box;
+}
+
+
 html {
         background-image: url('./img/pexels-festus-obi-30040337-10743369.jpg');
+        background-attachment: fixed;
         background-size: cover;
         /* background-position: bottom center; */
 
-
+        color: #16265d;
         background-color: rgba(8, 27, 65, 0.438);
         background-blend-mode: multiply;
         font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-form{
+form {
         background-color: rgba(255, 255, 255, 0.589);
         width: max-content;
-        max-width: 90vw;
-        margin: 2rem auto;
-        padding: 1rem;
+        max-width: 80vw;
+        margin: 100px auto;
+        padding: 2rem;
+        padding-bottom: 8px;
         border-radius: 0.5rem;
+}
+
+form label {
+        text-align: center;
+        display: block;
+}
+
+.form-row {
+        margin-bottom: 1rem;
+}
+
+textarea {
+        padding: 0.75rem;
+        border-radius: 7px;
+        border-width: 1px;
+        background-color: #16265d;
+        color: white;
+        width: -webkit-fill-available;
+        margin-top: 10px;
+}
+
+textarea:focus {
+        outline-color: #039be5;
+        outline-style: solid;
+        outline-width: 2px;
+}
+
+.progress-cont {
+        margin-top: 1.2rem;
+}
+
+em.quiz-progress {
+        font-size: .9rem;
+        border-radius: 1rem;
+        box-shadow: inset 1px 1px 2px 0 #0000002b;
+        color: #16265d;
+        background-color: #8080804a;
+        padding: 3px;
+        padding-left: 6%;
 }
 
 
@@ -26,7 +72,8 @@ form{
 .hidden {
         display: none;
 }
-.button-row{
+
+.button-row {
         display: flex;
 }
 
@@ -59,7 +106,8 @@ form{
         text-align: justify;
 }
 
-#message button {
+button,
+input[type=submit] {
         display: block;
         text-align: center;
         background: #039be5;
@@ -71,7 +119,8 @@ form{
         border: none;
         cursor: pointer;
 }
-#message p{
+
+#message p {
         margin-bottom: 0;
 }
 
@@ -80,21 +129,7 @@ form{
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-#message .message-language-select > p{
+#message .message-language-select>p {
         margin-bottom: 1rem;
 }
 
-
-@media (max-width: 600px) {
-
-        body,
-        #message {
-                margin-top: 0;
-                background: white;
-                box-shadow: none;
-        }
-
-        body {
-                border-top: 16px solid #ffa100;
-        }
-}
