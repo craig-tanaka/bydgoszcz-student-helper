@@ -15,7 +15,7 @@
         <!-- update the version number as needed -->
         <script defer src="/__/firebase/10.12.0/firebase-app-compat.js"></script>
         <!-- include only the Firebase features as you need -->
-        <!-- <script defer src="/__/firebase/10.12.0/firebase-auth-compat.js"></script> -->
+        <script defer src="/__/firebase/10.12.0/firebase-auth-compat.js"></script>
         <!-- <script defer src="/__/firebase/10.12.0/firebase-database-compat.js"></script> -->
         <script defer src="/__/firebase/10.12.0/firebase-firestore-compat.js"></script>
         <!-- <script defer src="/__/firebase/10.12.0/firebase-functions-compat.js"></script> -->
@@ -33,6 +33,9 @@
 </head>
 
 <body class="hidden">
+        <nav>
+                <a href="./login.html" class="nav-link">Login</a>
+        </nav>
         <div id="message">
                 <div class="message-language-select">
                         <p>Please Select Your Language | виберіть свою мову</p>
@@ -94,52 +97,48 @@
 
         <form class="quiz en hidden">
                 <div class="form-row">
-                        <label for="qn1">What single object you bring with you to university from home was
-                                most useful?</label>
+                        <label for="qn1">What was the most important thing you brought from home?</label>
                         <textarea name="qn1"></textarea>
                 </div>
                 <div class="form-row hidden">
-                        <label for="qn2">What locations in Bydgoszcz do you think are the most important for
-                                a student?</label>
+                        <label for="qn2">What locations in Bydgoszcz are the most important for you?</label>
                         <textarea name="qn2"></textarea>
                 </div>
                 <div class="form-row hidden">
-                        <label for="qn3">What was the most important thing that helped you get through
-                                your first years?</label>
-                        <textarea name="qn3"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn4">What where the things that made it hard for you in your first years?</label>
+                        <label for="qn4">What where the things that made it hard for you in your first year? 
+                        <br>(If you are 1st year, what are things that made if hard for you in the first semester)</label>
                         <textarea name="qn4"></textarea>
                 </div>
                 <div class="form-row hidden">
-                        <label for="qn5">Was there an object you left/forget at home, that you figured out at
-                                Uni was really essential or useful. If so what it is it?</label>
+                        <label for="qn3">What helped you get through your first year at University?
+                        <br>(If you are 1st year, what helped you get through your first semester)</label>
+                        <textarea name="qn3"></textarea>
+                </div>
+                <div class="form-row hidden">
+                        <label for="qn5">Was there anything you left at home, that you wish you brought with you. If so what it is it?</label>
                         <textarea name="qn5"></textarea>
                 </div>
                 <div class="form-row hidden">
-                        <label for="qn6">What other aspects of university life do you wish you had been better
-                                prepared for?</label>
+                        <label for="qn6">What other parts of university life do you wish you had been better prepared for?</label>
                         <textarea name="qn6"></textarea>
                 </div>
                 <div class="form-row hidden">
                         <label for="qn7">How did you manage your time between academic responsibilities, social
-                                activities and a job (if applicable)</label>
+                                activities (social activities such as joining clubs and playing sports) and a job</label>
                         <textarea name="qn7"></textarea>
                 </div>
                 <div class="form-row hidden">
-                        <label for="qn8">What strategies did you use to cope with stress maintain your mental
-                                well-being?</label>
+                        <label for="qn8">How did you handle stress and stay mentally healthy</label>
                         <textarea name="qn8"></textarea>
                 </div>
                 <div class="form-row hidden">
-                        <label for="qn9">How important was it for you to have access to mentorship or
+                        <label for="qn9">How important was it for you to have access to a mentor or
                                 guidance from older students or faculty members?</label>
                         <textarea name="qn9"></textarea>
                 </div>
                 <div class="form-row hidden">
-                        <label for="qn10">What role did extracurricular activities or campus involvement play in
-                                your overall university experience? (For Example: Playing Sports, Going to the University gym)</label>
+                        <label for="qn10">What role did extracurricular activities (For Example: Playing Sports, Going to the University gym) or campus involvement play in
+                                your overall university experience?</label>
                         <textarea name="qn10"></textarea>
                 </div>
                 <div class="form-row hidden">
@@ -148,7 +147,7 @@
                         <textarea name="qn11"></textarea>
                 </div>
                 <div class="form-row hidden">
-                        <label for="qn12">What were some of the biggest misconceptions you had about
+                        <label for="qn12">What were some of the biggest misunderstandings you had about
                                 university life before starting?</label>
                         <textarea name="qn12"></textarea>
                 </div>
@@ -158,8 +157,7 @@
                         <textarea name="qn13"></textarea>
                 </div>
                 <div class="form-row hidden">
-                        <label for="qn14">What techniques and resources did you use to study and succeed
-                                academically?</label>
+                        <label for="qn14">What techniques and resources did you use to study and pass some exams?</label>
                         <textarea name="qn14"></textarea>
                 </div>
                 <div class="form-row hidden">
