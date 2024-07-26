@@ -1,12 +1,22 @@
-*,textarea {
+*,
+textarea {
         box-sizing: border-box;
         font-family: "Raleway", sans-serif;
         font-optical-sizing: auto;
-        font-weight:300;
+        font-weight: 300;
         font-style: normal;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1 {
+        text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
         font-weight: 600;
 }
 
@@ -38,21 +48,28 @@ form label {
         display: block;
 }
 
+
+
 .form-row {
         margin-bottom: 1rem;
 }
 
+input,
 textarea {
         padding: 0.75rem;
         border-radius: 7px;
         border-width: 1px;
         background-color: #16265d;
         color: white;
+}
+
+textarea {
         width: -webkit-fill-available;
         margin-top: 10px;
 }
 
-textarea:focus {
+textarea:focus,
+input:focus {
         outline-color: #039be5;
         outline-style: solid;
         outline-width: 2px;
@@ -73,7 +90,8 @@ em.quiz-progress {
 }
 
 
-.subtext, em.quiz-progress {
+.subtext,
+em.quiz-progress {
         font-size: .8em;
         font-weight: 300;
         font-style: italic;
@@ -141,3 +159,46 @@ input[type=submit] {
 #message .message-language-select>p {
         margin-bottom: 1rem;
 }
+
+
+
+
+
+
+/* #region Login */
+#login-main .form-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+#login-main h2 {
+        margin-top: 0;
+}
+
+#login-main label {
+        margin-right: 1em;
+}
+
+#login-main .form-row.submit-row {
+        justify-content: end;
+}
+
+#login-main .form-submit {
+        margin: 0;
+        background: none;
+        color: #16265d;
+        padding: 10px;
+        border: 1px solid #16265d;
+}
+
+#login-main .form-submit:focus,
+#login-main .form-submit:hover{
+        outline: none;
+}
+
+#login-main .form-submit:active{
+        background:#16265d;
+        color: white;
+}
+/* #endregion */
