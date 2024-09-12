@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bydgoszcz Student Helper</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+                rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/10.12.0/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/10.12.0/firebase-auth-compat.js"></script>
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-database-compat.js"></script> -->
+        <script defer src="/__/firebase/10.12.0/firebase-firestore-compat.js"></script>
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-functions-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-messaging-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-storage-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-analytics-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-remote-config-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-performance-compat.js"></script> -->
+        <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+        <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+        <script defer src="./js/quiz.js"></script>
+</head>
+
+<body class="home-main">
+        <aside>
+                <h1>Bydgoszcz Student Helper</h1>
+
+                <li class="sidebar-links-list">
+                        <a href="" class="sidebar-link">link item 1</a>
+                        <a href="" class="sidebar-link">link item 1</a>
+                        <a href="" class="sidebar-link">link item 1</a>
+                        <a href="" class="sidebar-link">link item 1</a>
+                        <a href="" class="sidebar-link">link item 1</a>
+                </li>
+        </aside>
+        <main>
+                <div class="header-row">
+                        <button class="filter-btn">Filters</button>
+                        <span class="search-cont">
+                                <img src="./img/search-icon.png" class="search-img">
+                                <input type="search" class="search-input">
+                        </span>
+                        <span class="account-cont">
+                                <img src="./img/sample-profile-pic.webp" class="account-img">
+                                <span class="account-text">
+                                        <span class="account-name">John Doe</span>
+                                        <span class="account-name">johndoe@gmail.com</span>
+                                </span>
+                        </span>
+                </div>
+                <div class="hero-module">
+                        <span class="now-popular">
+                                <img src="./img/fire-icon.png" alt="" class="now-popular-img">
+                                <span class="now-popular-text">Now Popular</span>
+                        </span>
+
+                        <div class="hero-module-main">
+                                <span class="hero-module-tags">
+                                        <span class="tag">For Starters</span>
+                                        <span class="tag">Most Recommended</span>
+                                </span>
+                                <h2 class="hero-module-name">Moving Around in Bydgoszcz</h2>
+                                <p class="hero-module-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur repellat dolorem libero eius quod culpa eaque, sunt autem aliquam placeat?</p>
+                                <span class="hero-button-row">
+                                        <button class="hero-button start-now">Start-Now</button>
+                                        <button class="hero-button bookmark">Bookmark</button>
+                                </span>
+                        </div>
+                </div>
+                <div class="other-modules">
+                        <span class="module-type-selector">
+                                <span class="type">Popular</span>
+                                <span class="type active">Recommended</span>
+                                <span class="type">New</span>
+                        </span>
+                        <span class="module-row">
+                                <div class="module">
+                                        <img src="./img/sample-module-img.jpg" alt="" class="module-img">
+                                        <h3 class="module-name">Fitness & Wellness</h3>
+                                        <span class="module-details">
+                                                <span class="module-likes">
+                                                        <img src="./img/likes-icon.png" class="likes-img">
+                                                        <span class="number-of-likes">62</span>
+                                                </span>
+                                                <span class="module-views">
+                                                        <img src="./img/views-icon.png" class="views-img">
+                                                        <span class="number-of-views">1546</span>
+                                                </span>
+                                        </span>
+                                </div>
+                        </span>
+                </div>
+
+        </main>
+
+</body>
+
+</html>
