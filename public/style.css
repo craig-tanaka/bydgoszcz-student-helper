@@ -380,6 +380,7 @@ img.continue-module-img {
 .account-text{
         display: flex;
         flex-direction: column;
+        color: #88c2e9;
 }
 
 /* ___________Hero Module ____________ */
@@ -461,6 +462,8 @@ img.continue-module-img {
 }
 .module {
         width: max-content;
+        color: #e2f2fdbd;
+        margin-right: 2rem;
 }
 .module-img {
         width: 10rem;
@@ -472,6 +475,7 @@ img.continue-module-img {
 }
 .module-name {
         margin: 0;
+        font-weight: 300;
 }
 .module-details {
         display: flex;
