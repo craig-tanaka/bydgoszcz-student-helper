@@ -534,3 +534,69 @@ img.continue-module-img {
         margin-left: -6px;
 }
 /* #endregion Module-preview */
+
+/* #region Module Page */
+.module-page-module-cont .course-length{
+        margin: 0;
+        text-align: center;
+        margin-bottom: 0.5rem;
+}
+.module-page-module-cont .boxed-details{
+        display: flex;
+        justify-content: space-between;
+        border: 2px solid;
+        border-radius: 3px;
+        margin-bottom: 0.5rem;
+        padding: 5px 10px;
+        background: white;
+        color: #2f4452;
+}
+.module-page-module-cont .boxed-details > span{
+        font-weight: 500;
+}
+.module-page-module-cont .boxed-details em{
+        font-weight: 300; 
+        margin-left: 5px;
+}
+.module-page-module-cont .detail-row{
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+}
+.module-page-module-cont h4{
+        margin: 0;
+}
+.module-page-module-cont .module-ctas-row{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+.module-page-module-cont .module-ctas-row .module-enroll{
+        margin-right: 1rem;
+}
+
+/*_______________Tall Image Style____________ */
+
+
+
+/*_______________Wide Image Style____________ */
+.module-page-module-cont.wide .module-hero-img{
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+        object-position: center;
+        
+}
+.module-page-module-cont.wide .module-description-cont{
+        display: flex;
+        color: white;
+}
+.module-page-module-cont.wide .module-main-details{
+        width: 70%;
+        margin-right: 1rem;
+}
+.module-page-module-cont.wide .module-sub-details{
+        margin-top: 0.83em;
+}
+/* #endregion Module Page */
