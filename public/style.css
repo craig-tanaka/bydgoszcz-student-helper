@@ -577,7 +577,29 @@ img.continue-module-img {
 }
 
 /*_______________Tall Image Style____________ */
-
+.module-page-module-cont.tall{
+        display: flex;
+        width: 100%;
+        height: 100%;
+}
+.module-page-module-cont.tall .module-hero-img{
+        width: 75%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        
+}
+.module-page-module-cont.tall .module-description-cont{
+        /* display: flex; */
+        color: white;
+        margin-left: 1rem;
+}
+.module-page-module-cont.tall .module-main-details{
+        text-align: justify;
+}
+.module-page-module-cont.wide .module-sub-details{
+        margin-top: 0.83em;
+}
 
 
 /*_______________Wide Image Style____________ */
@@ -599,4 +621,6 @@ img.continue-module-img {
 .module-page-module-cont.wide .module-sub-details{
         margin-top: 0.83em;
 }
+
+
 /* #endregion Module Page */
