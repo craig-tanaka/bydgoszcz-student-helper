@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bydgoszcz Student Helper | Module</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+                rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/10.12.0/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/10.12.0/firebase-auth-compat.js"></script>
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-database-compat.js"></script> -->
+        <script defer src="/__/firebase/10.12.0/firebase-firestore-compat.js"></script>
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-functions-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-messaging-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-storage-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-analytics-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-remote-config-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-performance-compat.js"></script> -->
+        <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+        <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+        <script defer src="./js/home.js"></script>
+</head>
+
+<body class="home-main">
+        <aside>
+                <h1>Bydgoszcz Student Helper</h1>
+
+                <ul class="sidebar-links-list">
+                        <a href="" class="sidebar-link">
+                                <img src="./img/home-icon-outlined.png" class="sidebar-link-icon">
+                                <span>Home</span>
+                        </a>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/watchlist-icon.webp" class="sidebar-link-icon">
+                                <span>Watchlist</span>
+                        </a>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/Favorite-icon.png" class="sidebar-link-icon">
+                                <span>Favorites</span>
+                        </a>
+                        <hr>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/profile-icon.png" class="sidebar-link-icon">
+                                <span>Profile</span>
+                        </a>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/settings-icon.png" class="sidebar-link-icon">
+                                <span>Settings</span>
+                        </a>
+                </ul>
+
+                <h2 class="continue-list-header">Continue Module</h2>
+                <ul class="siderbar-continue-list">
+                        <div class="continue-module-cont">
+                                <span class="continue-module-details">
+                                        <img src="./img/sample-polish-module-img.webp" alt="" class="continue-module-img">
+                                        <span class="continue-module-text">
+                                                <h4 class="continue-module-name">Polish 101</h4>
+                                                <span class="module-bookmark-place">Chapter 3</span>
+                                        </span>
+                                </span>
+                                <img src="./img/play-icon.png" alt="" class="continue-module-play">
+                        </div>
+                        <div class="continue-module-cont">
+                                <span class="continue-module-details">
+                                        <img src="./img/sample-polish-module-img.webp" alt="" class="continue-module-img">
+                                        <span class="continue-module-text">
+                                                <h4 class="continue-module-name">Polish 101</h4>
+                                                <span class="module-bookmark-place">Chapter 3</span>
+                                        </span>
+                                </span>
+                                <img src="./img/play-icon.png" alt="" class="continue-module-play">
+                        </div>
+                </ul>
+        </aside>
+        <main>
+                <div class="header-row">
+                        <button class="filter-btn">Filters</button>
+                        <span class="search-cont">
+                                <img src="./img/search-icon.png" class="search-img">
+                                <input type="search" class="search-input">
+                        </span>
+                        <span class="account-cont">
+                                <img src="./img/sample-profile-pic.webp" class="account-img">
+                                <span class="account-text">
+                                        <span class="account-name">John Doe</span>
+                                        <span class="account-name">johndoe@gmail.com</span>
+                                </span>
+                        </span>
+                </div>
+                <div class="module-view video">
+                        <div class="module-view-main">
+                                <img src="./img/pexels-festus-obi-30040337-10743369.jpg" alt="" class="video">
+                                <div class="notes-and-comments-cont">
+                                        <span class="notes-or-comments-selector-cont">
+                                                <h3 class="selector notes" style="display:none;">notes</h3>
+                                                <h3 class="selector comments">Comments</h3>
+                                        </span>
+                                        <div class="notes-cont"></div>
+                                        <div class="comments-cont">
+                                                <div class="submit-comment">
+                                                        <textarea name="user-comment" cols="30" rows="2" placeholder="Enter Your Comment"></textarea>
+                                                        <input type="submit" value="Submit">
+                                                </div>
+                                                <div class="comment">
+                                                        <h6 class="comment-author">James Corben</h6>
+                                                        <p class="actual-comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, reprehenderit?</p>
+                                                        <span class="comment-react-row">
+                                                                <button class="like-comment">
+                                                                        <img src="./img/likes-icon.png" alt="like">
+                                                                </button>
+                                                                <button class="dislike-comment">
+                                                                        <img src="./img/dislike-icon.png" alt="like">
+                                                                </button>
+                                                        </span>
+                                                        <hr>
+                                                </div>
+                                                <div class="comment">
+                                                        <h6 class="comment-author">James Corben</h6>
+                                                        <p class="actual-comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, reprehenderit?</p>
+                                                        <span class="comment-react-row">
+                                                                <button class="like-comment">
+                                                                        <img src="./img/likes-icon.png" alt="like">
+                                                                </button>
+                                                                <button class="dislike-comment">
+                                                                        <img src="./img/dislike-icon.png" alt="like">
+                                                                </button>
+                                                        </span>
+                                                        <hr>
+                                                </div>
+                                                <div class="comment">
+                                                        <h6 class="comment-author">James Corben</h6>
+                                                        <p class="actual-comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, reprehenderit?</p>
+                                                        <span class="comment-react-row">
+                                                                <button class="like-comment">
+                                                                        <img src="./img/likes-icon.png" alt="like">
+                                                                </button>
+                                                                <button class="dislike-comment">
+                                                                        <img src="./img/dislike-icon.png" alt="like">
+                                                                </button>
+                                                        </span>
+                                                        <hr>
+                                                </div>
+                                                <div class="comment">
+                                                        <h6 class="comment-author">James Corben</h6>
+                                                        <p class="actual-comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, reprehenderit?</p>
+                                                        <span class="comment-react-row">
+                                                                <button class="like-comment">
+                                                                        <img src="./img/likes-icon.png" alt="like">
+                                                                </button>
+                                                                <button class="dislike-comment">
+                                                                        <img src="./img/dislike-icon.png" alt="like">
+                                                                </button>
+                                                        </span>
+                                                        <hr>
+                                                </div>
+                                                <div class="comment">
+                                                        <h6 class="comment-author">James Corben</h6>
+                                                        <p class="actual-comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, reprehenderit?</p>
+                                                        <span class="comment-react-row">
+                                                                <button class="like-comment">
+                                                                        <img src="./img/likes-icon.png" alt="like">
+                                                                </button>
+                                                                <button class="dislike-comment">
+                                                                        <img src="./img/dislike-icon.png" alt="like">
+                                                                </button>
+                                                        </span>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="module-view-sidebar">
+                                <table class="module-details">
+                                        <tbody>
+                                                <tr class="detail">
+                                                        <td class="detail-title">Lecture Type</td>
+                                                        <td class="detail-detail">Video</td>
+                                                </tr>
+                                                <tr class="detail">
+                                                        <td class="detail-title">Skills Level</td>
+                                                        <td class="detail-detail">Beginner</td>
+                                                </tr>
+                                                <tr class="detail">
+                                                        <td class="detail-title">Duration</td>
+                                                        <td class="detail-detail">15mins</td>
+                                                </tr>
+                                                <tr class="detail">
+                                                        <td class="detail-title">Assestment</td>
+                                                        <td class="detail-detail">Quiz</td>
+                                                </tr>
+                                        </tbody>
+                                </table>
+                                <div class="module-description-cont">
+                                        <h2>Moving Around in Bydgoszcz</h2>
+                                        <div class="module-tags">
+                                                <span class="tag">Beginner</span>
+                                                <span class="tag">Urban Navigation</span>
+                                                <span class="tag">Essentials</span>
+                                                <span class="tag">Student Life</span>
+                                                <span class="tag">Public Transit</span>
+                                        </div>
+                                        <p class="course-actual-description">
+                                                This course introduces students to the essential locations, resources, and cultural hotspots within their new city. Through guided visits, interactive maps, and insider tips, students will explore key landmarks, learn practical navigation skills, and gain insights into local history and customs. From transportation hubs and study-friendly cafés to museums and student-friendly neighborhoods, this course is designed to help students feel at home and make the most of their urban environment. Join us for an engaging journey that combines discovery with community connection, setting a strong foundation for living and learning in your new city.
+                                        </p>
+                                </div>
+                                <div class="course-parts-cont">
+                                        <h3 class="course-parts-title">This course has the following parts:</h3>
+                                        <ul class="course-parts">
+                                                <li class="course-part">Navigation Essentials: Transportation and Transit Tips</li>
+                                                <li class="course-part">Hidden Gems: Discovering Local Landmarks and Hangouts</li>
+                                                <li class="course-part">Student Life Hub: Libraries, Study Spots, and Campus Resources</li>
+                                                <li class="course-part">Food Scene 101: Affordable Eats and Must-Try Restaurants</li>
+                                                <li class="course-part">Neighborhood Know-How: Getting to Know Your City’s Districts</li>
+                                                <li class="course-part">Safety and Savvy: Staying Safe and Informed</li>
+                                                <li class="course-part">Resource Roundup: Medical, Financial, and Essential Services</li>
+                                        </ul>
+                                </div>
+                        </div>
+                </div>
+
+        </main>
+</body>
+
+</htmls
