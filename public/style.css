@@ -727,3 +727,43 @@ td.detail-detail {
         margin-top: 1rem;
 }
 /* #endregion Module-view Page */
+
+/* #region create-module */
+.create-module-main{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+}
+.create-img-cont{
+        position: relative;
+        margin-top: 25vh;
+}
+.create-img-cont img{
+        width: 12rem;
+        z-index: 1;
+        cursor: pointer;
+}
+.create-img-cont label.select-img-label {
+        color: white;
+        position: absolute;
+        top: 0;
+        margin-top: -2rem;
+        text-align: center;
+        left: 0;
+        margin-left: 1.5rem;
+        width: 100%;
+        z-index: 2;
+        pointer-events: none;
+        font-weight: 900;
+}
+.create-img-cont input[type="file"] {
+        position: absolute;
+        left: 0;
+        z-index: 0;
+        opacity: 0;
+}
+form.create-module {
+        margin: 0;
+}
+/* #endregion create-module */
