@@ -770,6 +770,12 @@ body.create-module h2{
         z-index: 0;
         opacity: 0;
 }
+.create-img-cont label.input-error-label{
+        display: block;
+        color: red;
+        margin-left: -6rem;
+        opacity: 0;
+}
 form.create-module {
         margin: 0;
 }

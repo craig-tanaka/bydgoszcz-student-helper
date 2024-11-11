@@ -29,7 +29,7 @@
       to avoid connecting the SDK to running emulators.
     -->
         <script defer src="/__/firebase/init.js?useEmulator=false"></script>
-        <script defer src="./js/home.js"></script>
+        <script defer src="./js/create-module.js"></script>
 </head>
 
 <body class="home-main create-module">
@@ -128,9 +128,10 @@
                                         </div>
                                 </form>
                                 <div class="create-img-cont">
-                                        <img src="./img/select-image.png" alt="">
+                                        <img src="./img/select-image.png" class="select-image-btn">
                                         <label class="select-img-label">Select Image</label>
-                                        <input type="file" name="create-module-input file">
+                                        <input type="file" accept="image/*" class="create-module-input file">
+                                        <label class="input-error-label">Image size must not be greater than 1mb</label>
                                 </div>
                         </div>
                         
