@@ -81,12 +81,14 @@ form label {
 }
 
 input,
-textarea {
+textarea,
+select {
         padding: 0.75rem;
         border-radius: 7px;
         border-width: 1px;
         background-color: #265473;
         color: white;
+        width: 100%;
 }
 
 textarea {
@@ -735,10 +737,15 @@ td.detail-detail {
         justify-content: space-around;
         align-items: flex-start;
 }
+body.create-module h2{
+        text-align: center;
+        color: white;
+}
 .create-img-cont{
         position: relative;
         margin-top: 25vh;
 }
+
 .create-img-cont img{
         width: 12rem;
         z-index: 1;
