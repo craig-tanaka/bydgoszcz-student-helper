@@ -12,18 +12,58 @@ h1 {
         text-align: center;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
         font-weight: 600;
 }
 
 html {
         color: #265473;
         font-family: Raleway, Helvetica, Arial, sans-serif;
+}
+
+.hidden{
+        display: none !important;
+}
+input,
+textarea,
+select {
+        padding: 0.75rem;
+        border-radius: 7px;
+        border-width: 1px;
+        background-color: #265473;
+        color: white;
+        width: 100%;
+}
+textarea {
+        width: -webkit-fill-available;
+        margin-top: 10px;
+}
+
+textarea:focus,
+input:focus {
+        outline-color: #039be5;
+        outline-style: solid;
+        outline-width: 2px;
+}
+
+button,
+input[type=submit] {
+        display: block;
+        text-align: center;
+        background: #1a0801;
+        text-transform: uppercase;
+        color: white;
+        padding: 16px;
+        border-radius: 4px;
+        margin: 0 auto;
+        border: none;
+        cursor: pointer;
+        font-weight: 800;
+        outline: none;
+}
+input[type=submit]:active,
+button:active {
+        box-shadow: inset 1px 1px 5px 4px black;
 }
 /* #endregion Sitewide */
 
@@ -60,11 +100,14 @@ scrollbar{
 
 /* #region quiz */
 form {
-        background-color: rgba(255, 255, 255, 0.589);
+        background-color: rgb(255 255 255 / 1%);
+        color: white;
+        backdrop-filter: blur(4px);
+        box-shadow: 1px -1px 3px 0 #1a08014f;
         width: max-content;
         max-width: 80vw;
         margin: 100px auto;
-        padding: 2rem;
+        padding: 1rem 2rem;
         padding-bottom: 8px;
         border-radius: 0.5rem;
 }
@@ -72,36 +115,13 @@ form {
 form label {
         text-align: center;
         display: block;
+        margin-bottom: 5px;
 }
-
-
 
 .form-row {
         margin-bottom: 1rem;
 }
 
-input,
-textarea,
-select {
-        padding: 0.75rem;
-        border-radius: 7px;
-        border-width: 1px;
-        background-color: #265473;
-        color: white;
-        width: 100%;
-}
-
-textarea {
-        width: -webkit-fill-available;
-        margin-top: 10px;
-}
-
-textarea:focus,
-input:focus {
-        outline-color: #039be5;
-        outline-style: solid;
-        outline-width: 2px;
-}
 
 .progress-cont {
         margin-top: 1.2rem;
@@ -116,8 +136,6 @@ em.quiz-progress {
         padding: 3px;
         padding-left: 6%;
 }
-
-
 .subtext,
 em.quiz-progress {
         font-size: .8em;
@@ -158,21 +176,6 @@ em.quiz-progress {
         margin: 16px 0 24px;
         font-size: 14px;
         text-align: justify;
-}
-
-button,
-input[type=submit] {
-        display: block;
-        text-align: center;
-        background: #265473;
-        text-transform: uppercase;
-        color: white;
-        padding: 16px;
-        border-radius: 4px;
-        margin: 0 auto;
-        border: none;
-        cursor: pointer;
-        font-weight: 800;
 }
 
 #message p {
@@ -770,13 +773,22 @@ body.create-module h2{
         z-index: 0;
         opacity: 0;
 }
-.create-img-cont label.input-error-label{
+.input-error-label{
         display: block;
         color: red;
         margin-left: -6rem;
         opacity: 0;
+        font-weight: 600;
 }
-form.create-module {
+#create-module-main-details .input-error-label{
+        margin-left: 0;
+        margin-top: -1rem;
+}
+
+form#create-module-main-details{
         margin: 0;
+}
+.create-module-main .create-module-textarea{
+        margin-top: 0;
 }
 /* #endregion create-module */

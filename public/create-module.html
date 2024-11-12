@@ -102,36 +102,34 @@
                 <div class="create-module">
                         <h2>Create Module</h2>
                         <div class="create-module-main">
-                                <form class="create-module">
+                                <form id="create-module-main-details">
                                         <div class="form-row">
-                                                <label for="module-name" class="form-row">Module Name</label>
+                                                <label for="module-name" class="form-label">Module Name</label>
                                                 <input type="text" id="module-name" class="create-module-input">
                                         </div>
                                         <div class="form-row">
-                                                <label for="module-difficulty" class="form-row">Module Name</label>
-                                                <select name="" id="module-difficulty">
+                                                <label for="module-difficulty" class="form-label">Module Difficulty</label>
+                                                <select id="module-difficulty">
+                                                        <option value="" class="create-module-option" disabled selected></option>
                                                         <option value="Beginner" class="create-module-option">Beginner</option>
                                                         <option value="intermediate" class="create-module-option">Intermediate</option>
                                                         <option value="Expert" class="create-module-option">Expert</option>
                                                 </select>
                                         </div>
                                         <div class="form-row">
-                                                <label for="module-description" class="form-row">Module Description</label>
+                                                <label for="module-description" class="form-label">Module Description</label>
                                                 <textarea id="module-description" class="create-module-textarea" cols="30" rows="10"></textarea>
                                         </div>
                                         <div class="form-row">
-                                                <label for="module-tags" class="form-row">Module Tags</label>
-                                                <textarea id="module-tags" class="create-module-textarea" cols="30" rows="10"></textarea>
-                                        </div>
-                                        <div class="form-row">
-                                                <input type="submit" value="Submit">
+                                                <label id="create-module" class="input-error-label">Please fill in all highlighted fields</label>
+                                                <input type="submit" class="create-module-submit" value="Submit">
                                         </div>
                                 </form>
-                                <div class="create-img-cont">
+                                <div class="create-img-cont hidden">
                                         <img src="./img/select-image.png" class="select-image-btn">
                                         <label class="select-img-label">Select Image</label>
                                         <input type="file" accept="image/*" class="create-module-input file">
-                                        <label class="input-error-label">Image size must not be greater than 1mb</label>
+                                        <label class="input-error-label">Image size must not be greater than 750kb</label>
                                 </div>
                         </div>
                         
