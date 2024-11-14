@@ -102,7 +102,7 @@
                 <div class="create-module">
                         <h2>Create Module</h2>
                         <div class="create-module-main">
-                                <form id="create-module-main-details">
+                                <form id="create-module-main-details" class="">
                                         <div class="form-row">
                                                 <label for="module-name" class="form-label">Module Name</label>
                                                 <input type="text" id="module-name" class="create-module-input">
@@ -126,10 +126,11 @@
                                         </div>
                                 </form>
                                 <div class="create-img-cont hidden">
-                                        <img src="./img/select-image.png" class="select-image-btn">
                                         <label class="select-img-label">Select Image</label>
+                                        <img src="./img/select-image.png" class="select-image-btn">
+                                        <label class="input-error-label hidden">Image size must not be greater than 750kb</label>
+                                        <button class="img-submit">Submit</button>
                                         <input type="file" accept="image/*" class="create-module-input file">
-                                        <label class="input-error-label">Image size must not be greater than 750kb</label>
                                 </div>
                         </div>
                         

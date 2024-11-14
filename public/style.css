@@ -745,44 +745,43 @@ body.create-module h2{
         color: white;
 }
 .create-img-cont{
-        position: relative;
         margin-top: 25vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 }
 
 .create-img-cont img{
-        width: 12rem;
+        height: 20vh;
         z-index: 1;
         cursor: pointer;
 }
 .create-img-cont label.select-img-label {
         color: white;
-        position: absolute;
-        top: 0;
-        margin-top: -2rem;
         text-align: center;
-        left: 0;
-        margin-left: 1.5rem;
-        width: 100%;
-        z-index: 2;
         pointer-events: none;
         font-weight: 900;
+        margin-bottom: 1rem;
+        margin-left: -2rem;
 }
 .create-img-cont input[type="file"] {
-        position: absolute;
-        left: 0;
-        z-index: 0;
         opacity: 0;
 }
 .input-error-label{
         display: block;
         color: red;
-        margin-left: -6rem;
-        opacity: 0;
         font-weight: 600;
+        text-align: center;
 }
 #create-module-main-details .input-error-label{
         margin-left: 0;
+        opacity: 0;
         margin-top: -1rem;
+}
+body.create-module button.img-submit{
+        margin-top: 1rem;
+        margin-left: 5.3rem;
 }
 
 form#create-module-main-details{

@@ -9,6 +9,7 @@ const createModuleSubmit = document.querySelector('.create-module-submit')
 const selectImgBtn = document.querySelector('.select-image-btn');
 const imgInputElement = document.querySelector('.create-module-input.file')
 const imgInputErrorLabel = document.querySelector('.create-img-cont .input-error-label')
+const imgInputSubmit = document.querySelector('.create-img-cont .img-submit')
 
 const db = firebase.firestore();
 var documentReferenceNumber = null; // id used to identfy module in database
@@ -45,9 +46,12 @@ createModuleSubmit.addEventListener('click', (event) => {
                         difficulty: moduleDifficultyInput.value,
                         description: moduleDescriptionInput.value,
                 }).then((docRef) => {
-                        console.log("Document written with ID: ", docRef.id);
-                        alert('document Added To DB')
-                        // documentReferenceNumber = 
+                        // console.log("Document written with ID: ", docRef.id);
+                        documentReferenceNumber = docRef.id;
+
+                        // Hide main module details form and show picture select form
+                        document.querySelector('#create-module-main-details').classList.add('hidden')
+                        document.querySelector('.create-img-cont').classList.remove('hidden')
                 }).catch((error) => {
                         // if there is a field not filled shown error message else hide it
                         mainDetailsErrorLabel.innerHTML = "Failed to submit please try again later, or contact out support team";
@@ -83,3 +87,44 @@ function allFieldsFilled() {
 }
 
 
+// _______The following functions are executed when submitting module after select module image_____________
+imgInputSubmit.addEventListener('click', () => {
+        if (imgInputElement.value == "") {
+                imgInputElement.innerHTML = "Please select an image for the module";
+                imgInputErrorLabel.style.opacity = 1;
+                return;
+        }
+
+        const file = imgInputElement.files[0];
+
+        if (file) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = () => {
+                        var base64ImgString = reader.result.split(',')[1];
+                        db.collection("images").add({
+                                imgData: base64ImgString
+                        }).then((docRef)=>{
+                                addImageIDtoDocument(docRef);
+                        }).catch((error) => {
+                                // if there is a field not filled shown error message else hide it
+                                imgInputErrorLabel.innerHTML = "Failed to submit please try again later, or contact out support team";
+                                imgInputErrorLabel.style.opacity = 1;
+                                createModuleSubmit.classList.remove("hidden");
+                                // console.error("Error adding document: ", error);
+                        });
+                }
+        }
+})
+function addImageIDtoDocument(docRef) {
+        // Add image document ID to the modules document on firebase
+        db.collection("modules").doc(documentReferenceNumber).update({
+                imageRef: docRef.id
+        })
+        .then(() => {
+                alert("Image ID added to Module ID");
+        })
+        .catch((error) => {
+                console.error("Error writing document: ", error);
+        });
+}
