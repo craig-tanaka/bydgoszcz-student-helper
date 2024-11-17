@@ -1,7 +1,7 @@
 const error_label = document.querySelector('#register-error-label')
 const submit_btn = document.querySelector('.form-submit')
 
-var email, password, repeat_password;
+let email, password, repeat_password;
 
 submit_btn.addEventListener('click', (e) => {
         e.preventDefault()
@@ -22,8 +22,8 @@ submit_btn.addEventListener('click', (e) => {
                         // ...
                 })
                 .catch((error) => {
-                        var errorCode = error.code;
-                        var errorMessage = error.message;
+                        let errorCode = error.code;
+                        let errorMessage = error.message;
                         alert('user login failed');
                         // ..
                 });

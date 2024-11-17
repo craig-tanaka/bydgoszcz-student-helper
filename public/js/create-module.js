@@ -12,7 +12,7 @@ const imgInputErrorLabel = document.querySelector('.create-img-cont .input-error
 const imgInputSubmit = document.querySelector('.create-img-cont .img-submit')
 
 const db = firebase.firestore();
-var documentReferenceNumber = null; // id used to identfy module in database
+let documentReferenceNumber = null; // id used to identfy module in database
 
 selectImgBtn.addEventListener('click', (event) => {
         imgInputElement.click();
@@ -20,7 +20,7 @@ selectImgBtn.addEventListener('click', (event) => {
 imgInputElement.addEventListener('change', (event) => {
 
         //check if img size is less than 1mb
-        var img = event.target.files[0];
+        let img = event.target.files[0];
         const maxSize = 750 * 1024; // 1 MB in bytes
         if (img && img.size > maxSize) {
                 imgInputErrorLabel.innerHTML = "Image size must not be greater than 750kb";
@@ -62,7 +62,7 @@ createModuleSubmit.addEventListener('click', (event) => {
         }
 })
 function allFieldsFilled() {
-        var allfilled = true; 
+        let allfilled = true; 
         if (moduleNameInput.value == "") {
                 moduleNameInput.style.outline = "1px solid red";
                 allfilled = false;
@@ -101,7 +101,7 @@ imgInputSubmit.addEventListener('click', () => {
                 const reader = new FileReader();
                 reader.readAsDataURL(file);
                 reader.onloadend = () => {
-                        var base64ImgString = reader.result.split(',')[1];
+                        let base64ImgString = reader.result.split(',')[1];
                         db.collection("images").add({
                                 imgData: base64ImgString
                         }).then((docRef)=>{
