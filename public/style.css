@@ -541,7 +541,7 @@ img.continue-module-img {
 /* #endregion Module-preview */
 
 /* #region Module Page */
-.module-page-module-cont .course-length{
+.module-page-module-cont .module-length{
         margin: 0;
         text-align: center;
         margin-bottom: 0.5rem;
@@ -724,11 +724,11 @@ td.detail-detail {
         display: flex;
         flex-wrap: wrap;
 }
-.course-actual-description {
+.module-actual-description {
         margin-top: 0.5rem;
 }
 
-.module-view.video .course-chapters-cont{
+.module-view.video .module-chapters-cont{
         margin-top: 1rem;
 }
 /* #endregion Module-view Page */
