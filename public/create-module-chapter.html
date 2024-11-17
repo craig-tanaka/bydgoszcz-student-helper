@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bydgoszcz Student Helper | Create Module Chapter</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+                rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/10.12.0/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/10.12.0/firebase-auth-compat.js"></script>
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-database-compat.js"></script> -->
+        <script defer src="/__/firebase/10.12.0/firebase-firestore-compat.js"></script>
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-functions-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-messaging-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-storage-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-analytics-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-remote-config-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-performance-compat.js"></script> -->
+        <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+        <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+        <script defer src="./js/create-module-chapter.js"></script>
+</head>
+
+<body class="home-main create-module">
+        <!-- TODO: rename classnames in file correctly -->
+        <aside>
+                <h1>Bydgoszcz Student Helper</h1>
+
+                <ul class="sidebar-links-list">
+                        <a href="" class="sidebar-link">
+                                <img src="./img/home-icon-outlined.png" class="sidebar-link-icon">
+                                <span>Home</span>
+                        </a>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/watchlist-icon.webp" class="sidebar-link-icon">
+                                <span>Watchlist</span>
+                        </a>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/Favorite-icon.png" class="sidebar-link-icon">
+                                <span>Favorites</span>
+                        </a>
+                        <hr>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/profile-icon.png" class="sidebar-link-icon">
+                                <span>Profile</span>
+                        </a>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/settings-icon.png" class="sidebar-link-icon">
+                                <span>Settings</span>
+                        </a>
+                </ul>
+
+                <h2 class="continue-list-header">Continue Module</h2>
+                <ul class="siderbar-continue-list">
+                        <div class="continue-module-cont">
+                                <span class="continue-module-details">
+                                        <img src="./img/sample-polish-module-img.webp" alt="" class="continue-module-img">
+                                        <span class="continue-module-text">
+                                                <h4 class="continue-module-name">Polish 101</h4>
+                                                <span class="module-bookmark-place">Chapter 3</span>
+                                        </span>
+                                </span>
+                                <img src="./img/play-icon.png" alt="" class="continue-module-play">
+                        </div>
+                        <div class="continue-module-cont">
+                                <span class="continue-module-details">
+                                        <img src="./img/sample-polish-module-img.webp" alt="" class="continue-module-img">
+                                        <span class="continue-module-text">
+                                                <h4 class="continue-module-name">Polish 101</h4>
+                                                <span class="module-bookmark-place">Chapter 3</span>
+                                        </span>
+                                </span>
+                                <img src="./img/play-icon.png" alt="" class="continue-module-play">
+                        </div>
+                </ul>
+        </aside>
+        <main>
+                <div class="header-row">
+                        <button class="filter-btn">Filters</button>
+                        <span class="search-cont">
+                                <img src="./img/search-icon.png" class="search-img">
+                                <input type="search" class="search-input">
+                        </span>
+                        <span class="account-cont">
+                                <img src="./img/sample-profile-pic.webp" class="account-img">
+                                <span class="account-text">
+                                        <span class="account-name">John Doe</span>
+                                        <span class="account-name">johndoe@gmail.com</span>
+                                </span>
+                        </span>
+                </div>
+                <div class="create-module">
+                        <h2>Create Module Chapter</h2>
+                        <div class="create-module-main">
+                                <form id="create-module-main-details" class="">
+                                        <div class="form-row">
+                                                <label for="module-name" class="form-label">Youtube Link</label>
+                                                <input type="text" id="youtube-video-link-input" class="create-module-input">
+                                        </div>
+                                        <div class="form-row">
+                                                <label for="module-description" class="form-label">Chapter Description</label>
+                                                <textarea id="module-description" class="create-module-textarea" cols="30" rows="10"></textarea>
+                                        </div>
+                                        <fieldset>
+                                                <legend>Add Quiz After Chapter:</legend>
+                                                <div class="label-form-row">
+                                                        <input type="radio" class="add-quiz-radio-option" value="No" checked />
+                                                        <label for="huey">No</label>
+                                                </div>
+                                                <div class="label-form-row">
+                                                        <input type="radio" class="add-quiz-radio-option" value="Yes" />
+                                                        <label for="dewey">Yes</label>
+                                                </div>
+                                        </fieldset>
+                                        <div class="form-row">
+                                                <label id="create-module" class="input-error-label">Please fill in all highlighted fields</label>
+                                                <input type="submit" class="create-module-submit" value="Submit">
+                                        </div>
+                                </form>
+                                <div class="linked-video-cont hidden">
+                                        <h3>Video Preview</h3>
+                                        <iframe class="linked-video-iframe" width="420" height="315" src=""></iframe>
+                                </div>
+                        </div>
+                        
+                </div>
+
+        </main>
+</body>
+
+</htmls
