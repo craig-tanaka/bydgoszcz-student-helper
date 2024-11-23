@@ -1,6 +1,6 @@
 const videoLinkInput = document.querySelector('#youtube-video-link-input')
 const linkedVideoIframe = document.querySelector('.linked-video-iframe')
-const linkedVideoCont = document.querySelector('.linked-video-cont')
+const linkedVideoErrorLabel = document.querySelector('.linked-video-error-label')
 
 let videoLinkID = '';
 
@@ -17,11 +17,15 @@ function previewYoutubeLink(userLink) {
                 tempImg.src = `http://img.youtube.com/vi/${videoID}/mqdefault.jpg`;
                 tempImg.onload = function() {
                         if (tempImg.width === 120) {
-                                alert("Error: Invalid video id");
                                 // TODO: video deos not exist show error message
+                                linkedVideoErrorLabel.innerHTML = "Youtube video not found, Please make sure you copied the link correctly."
+                                linkedVideoErrorLabel.style.color = "#cb6666"
+                                if (linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.remove("hidden")
+                                if(!linkedVideoIframe.classList.contains("hidden")) linkedVideoIframe.classList.add("hidden")
                         } else {
                                 linkedVideoIframe.src = `https://www.youtube.com/embed/${videoID}`
-                                linkedVideoCont.classList.remove('hidden')
+                                linkedVideoIframe.classList.remove('hidden')
+                                if(!linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.add("hidden")
                         }
                 }
                 tempImg.onerror = function (error) {
