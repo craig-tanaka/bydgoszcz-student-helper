@@ -1,5 +1,6 @@
 const videoLinkInput = document.querySelector('#youtube-video-link-input')
 const linkedVideoIframe = document.querySelector('.linked-video-iframe')
+const linkedVideoCont = document.querySelector('.linked-video-cont')
 
 let videoLinkID = '';
 
@@ -8,7 +9,7 @@ videoLinkInput.addEventListener('blur', (event) => {
 })
 
 
-async function checkLinkValidity(userLink) {
+function previewYoutubeLink(userLink) {
         let videoID = extractVideoIDFromLink(userLink);
 
         if (videoID) {
@@ -19,7 +20,8 @@ async function checkLinkValidity(userLink) {
                                 alert("Error: Invalid video id");
                                 // TODO: video deos not exist show error message
                         } else {
-                                // TODO: showVideoEmbed
+                                linkedVideoIframe.src = `https://www.youtube.com/embed/${videoID}`
+                                linkedVideoCont.classList.remove('hidden')
                         }
                 }
                 tempImg.onerror = function (error) {
@@ -58,9 +60,4 @@ function extractVideoIDFromLink(userLink) {
         
         // TODO: Else Generate error message or maybe until user trys to submit form to show error message
         return null;
-}
-function previewYoutubeLink(userLink) {
-        videoID = extractVideoIDFromLink(userLink);
-
-        
 }
