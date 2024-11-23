@@ -65,6 +65,21 @@ input[type=submit]:active,
 button:active {
         box-shadow: inset 1px 1px 5px 4px black;
 }
+fieldset{
+
+}
+input[type=radio] {
+        padding: 0;
+        width: max-content;
+        margin: 0;
+        margin-right: 5px;
+}
+fieldset .form-row{
+        display: flex;
+        align-items: baseline;
+        padding-left: 0.5rem;
+        margin-top: 10px;
+}
 /* #endregion Sitewide */
 
 
@@ -790,6 +805,7 @@ form#create-module-main-details{
 .create-module-main .create-module-textarea{
         margin-top: 0;
 }
+
 .linked-video-cont{
         width: 45%;
 }
