@@ -14,10 +14,9 @@ function previewYoutubeLink(userLink) {
 
         if (videoID) {
                 let tempImg = new Image();
-                tempImg.src = `http://img.youtube.com/vi/${videoID}/mqdefault.jpg`;
+                tempImg.src = `http://img.youtbe.com/vi/${videoID}/mqdefault.jpg`;
                 tempImg.onload = function() {
                         if (tempImg.width === 120) {
-                                // TODO: video deos not exist show error message
                                 linkedVideoErrorLabel.innerHTML = "Youtube video not found, Please make sure you copied the link correctly."
                                 linkedVideoErrorLabel.style.color = "#cb6666"
                                 if (linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.remove("hidden")
@@ -29,8 +28,11 @@ function previewYoutubeLink(userLink) {
                         }
                 }
                 tempImg.onerror = function (error) {
-                        // TODO: failed to get response from server
-                }
+                                linkedVideoErrorLabel.innerHTML = "Youtube did not respond. Please Try Again Later and if the problem still persists please contact the website administrator"
+                                linkedVideoErrorLabel.style.color = "#cb6666"
+                                if (linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.remove("hidden")
+                                if(!linkedVideoIframe.classList.contains("hidden")) linkedVideoIframe.classList.add("hidden")
+                        }
         }
 }
 function extractVideoIDFromLink(userLink) {
