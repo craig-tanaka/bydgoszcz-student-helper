@@ -49,7 +49,7 @@ addQuestionBtn.addEventListener('click', (event) => {
                 `<div class="question-expanded">
                         <div class="form-row">
                                 <label class="form-label">Question <span class="question-number">${numOfQuestions}</span></label>
-                                <input type="text" id="youtube-video-link-input" class="quiz-question-input">
+                                <input type="text" class="quiz-question-input">
                         </div>
                         <fieldset class="quiz-answers">
                                 <legend>Answers:</legend>
