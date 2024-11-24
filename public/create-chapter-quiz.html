@@ -103,17 +103,24 @@
                         <h2>Create Chapter Quiz</h2>
                         <div class="create-module-main">
                                 <form id="create-module-main-details" class="">
-                                        <div class="form-row">
-                                                <label class="form-label">Question <span class="question-number">1</span></label>
-                                                <input type="text" id="youtube-video-link-input" class="quiz-question-input">
-                                        </div>
-                                        <fieldset class="quiz-answers">
-                                                <legend>Answers:</legend>
-                                                <div class="quiz-answers-answers">
-                                                        <input type="text" class="answer-input">
-                                                        <button class="add-answer-btn">+</button>
+                                        <div class="all-questions-container">
+                                                <div class="question-container" id="qn-1">
+                                                        <div class="question-expanded">
+                                                                <div class="form-row">
+                                                                        <label class="form-label">Question <span class="question-number">1</span></label>
+                                                                        <input type="text" id="youtube-video-link-input" class="quiz-question-input">
+                                                                </div>
+                                                                <fieldset class="quiz-answers">
+                                                                        <legend>Answers:</legend>
+                                                                        <div class="question-answers-container">
+                                                                                <input type="text" class="answer-input">
+                                                                                <input type="text" class="answer-input">
+                                                                                <button class="add-answer-btn">+</button>
+                                                                        </div>
+                                                                </fieldset>
+                                                        </div>
                                                 </div>
-                                        </fieldset>
+                                        </div>
                                         <div class="form-row">
                                                 <label class="quiz-form-error-label hidden">Please fill in all highlighted fields</label>
                                                 <div class="button-row">
