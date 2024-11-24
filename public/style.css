@@ -845,4 +845,30 @@ button.remove-answer-btn {
         background-color: transparent;
         padding: 0.75rem;
 }
+.question-minimized {
+        display: flex;
+        align-items: baseline;
+}
+.question-minimized label{
+        display: flex;
+        align-items: baseline;
+        font-weight: 500;
+}
+.question-minimized label .question-number{
+        margin-left: 1px;
+}
+.question-preview {
+        display: -webkit-box; /* Enable flexbox-based layout for truncation */
+        -webkit-line-clamp: 1; /* Number of lines to show */
+        -webkit-box-orient: vertical; /* Vertical stacking of lines */
+        overflow: hidden; /* Hide overflowing content */
+        text-overflow: ellipsis; /* Show ellipsis for overflow */
+        margin-left: 3px;
+}
+.maximize-question-btn {
+        background-color: transparent;
+        color: white;
+        font-size: 1.2rem;
+        padding: 0;
+}
 /* #endregion create-module */

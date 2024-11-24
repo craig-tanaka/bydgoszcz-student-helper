@@ -63,4 +63,29 @@ addQuestionBtn.addEventListener('click', (event) => {
 
         // append the new question to the dom
         allQuestionsContainer.appendChild(newQuestion)
+        minmizePreviousQuestion()
+        currentQuestion = numOfQuestions
 })
+function minmizePreviousQuestion() {
+        const currentQuestionElement = document.querySelector(`#qn-${currentQuestion}`)
+
+        if (!currentQuestionElement.querySelector('.question-minimized')) {
+                // if the element does not already posess a minimized question element create it and add it DOM
+                const previousQuesionMimizedCont = document.createElement('span')
+                previousQuesionMimizedCont.classList.add('question-minimized')
+                previousQuesionMimizedCont.innerHTML =
+                        `<label>Question <span class="question-number">${currentQuestion}</span>:</label>
+                        <p class="question-preview"></p>
+                        <button class="maximize-question-btn">&#9660;</button>`
+                currentQuestionElement.appendChild(previousQuesionMimizedCont)
+        }
+        
+        // set or update the preview question
+        // Todo: please set an error for if a person tries to minize an empty question
+        // Todo this error check might need to be done before adding another question again
+        const updatedQuestion = currentQuestionElement.querySelector('.quiz-question-input').value
+        currentQuestionElement.querySelector('.question-preview').innerHTML = updatedQuestion
+
+        //hide the maximized question
+        currentQuestionElement.querySelector('.question-expanded').classList.add('hidden')
+}
