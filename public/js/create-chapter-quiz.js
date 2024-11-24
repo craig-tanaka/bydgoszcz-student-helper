@@ -7,6 +7,7 @@ let currentQuestion = 1
 allQuestionsContainer.addEventListener('click', function (event) {
         event.preventDefault()
         if (event.target.classList.contains('add-answer-btn')) addAnswerToQuestion(event.target)
+        if(event.target.classList.contains('maximize-question-btn')) maximizeQuestion(event.target)
 })
 function addAnswerToQuestion(pressedElement) {
         //create new answer container element
@@ -86,6 +87,19 @@ function minmizePreviousQuestion() {
         const updatedQuestion = currentQuestionElement.querySelector('.quiz-question-input').value
         currentQuestionElement.querySelector('.question-preview').innerHTML = updatedQuestion
 
-        //hide the maximized question
+        //hide the maximized question and unhide the minimized
         currentQuestionElement.querySelector('.question-expanded').classList.add('hidden')
+        currentQuestionElement.querySelector('.question-minimized').classList.remove('hidden')
+        
+}
+function maximizeQuestion(pressedElement) {
+        const questionContainer = pressedElement.closest('.question-container')
+
+        // minimize previous question and update current question variable
+        minmizePreviousQuestion()
+        currentQuestion = questionContainer.querySelector('.question-number').innerHTML
+
+        // hide the minimized version of the question and unhide the expanded one
+        questionContainer.querySelector('.question-expanded').classList.remove('hidden')
+        questionContainer.querySelector('.question-minimized').classList.add('hidden')
 }
