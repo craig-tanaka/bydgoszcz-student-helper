@@ -806,10 +806,12 @@ form#create-module-main-details{
         margin-top: 0;
 }
 
-.linked-video-cont{
+.linked-video-cont,
+.quiz-preview-main-cont{
         width: 45%;
 }
-.linked-video-cont h3{
+.linked-video-cont h3,
+.quiz-preview-main-cont h3{
         text-align: center;
         color: #88c2e9;
 }
@@ -819,7 +821,8 @@ form#create-module-main-details{
         width: 100%;
         height: 27rem;
 }
-.linked-video-error-label{
+.linked-video-error-label,
+.quiz-preview-error-label{
         color: #88c2e9;
         text-align: center;
 }
