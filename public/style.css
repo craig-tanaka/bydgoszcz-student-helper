@@ -26,7 +26,8 @@ html {
 }
 input,
 textarea,
-select {
+select,
+.added-answer-input-cont {
         padding: 0.75rem;
         border-radius: 7px;
         border-width: 1px;
@@ -825,5 +826,23 @@ form#create-module-main-details{
 .quiz-preview-error-label{
         color: #88c2e9;
         text-align: center;
+}
+/* _____________add-Quiz______________ */
+.added-answer-input-cont {
+        display: flex;
+        background-color: #265473;
+        border: 1px inset rgb(118, 118, 118);
+}
+.added-answer-input-cont{
+        padding: 0;
+}
+.answer-input.added{
+        border: none;
+        background-color: transparent;        
+        padding: 0.75rem;
+}
+button.remove-answer-btn {
+        background-color: transparent;
+        padding: 0.75rem;
 }
 /* #endregion create-module */

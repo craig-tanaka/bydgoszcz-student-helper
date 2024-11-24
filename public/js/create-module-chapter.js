@@ -1,6 +1,7 @@
 const videoLinkInput = document.querySelector('#youtube-video-link-input')
 const linkedVideoIframe = document.querySelector('.linked-video-iframe')
 const linkedVideoErrorLabel = document.querySelector('.linked-video-error-label')
+const mainDetailsSubmit = document.querySelector('#create-module-main-details input[type="submit"]')
 
 let videoLinkID = '';
 
@@ -67,3 +68,8 @@ function extractVideoIDFromLink(userLink) {
         // TODO: Else Generate error message or maybe until user trys to submit form to show error message
         return null;
 }
+
+
+mainDetailsSubmit.addEventListener('click', (event) => {
+        alert('yooo')
+})
