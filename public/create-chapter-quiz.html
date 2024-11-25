@@ -33,7 +33,7 @@
 </head>
 
 <body class="home-main create-module create-chapter-quiz">
-        <aside>
+        <aside class="hidden">
                 <h1>Bydgoszcz Student Helper</h1>
 
                 <ul class="sidebar-links-list">
@@ -113,8 +113,8 @@
                                                                 <fieldset class="quiz-answers">
                                                                         <legend>Answers:</legend>
                                                                         <div class="question-answers-container">
-                                                                                <input type="text" class="answer-input">
-                                                                                <input type="text" class="answer-input">
+                                                                                <input type="text" class="answer-input" id="qn-1-answer-input-1">
+                                                                                <input type="text" class="answer-input" id="qn-1-answer-input-2">
                                                                                 <button class="add-answer-btn">+</button>
                                                                         </div>
                                                                 </fieldset>
@@ -131,8 +131,21 @@
                                 </form>
                                 <div class="quiz-preview-main-cont">
                                         <h3>Quiz Preview</h3>
-                                        <div class="quiz-preview-cont hidden" src=""></div>
-                                        <p class="quiz-preview-error-label">Please add a Question and you can preview the quiz here.</p>
+                                        <div class="questions-preview-cont">
+                                                <div class="question-preview-single" id="preview-qn-1"><p class="question"></p>
+                                                        <fieldset class="question-answers-preview">
+                                                                <div class="preview-answer-cont">
+                                                                        <input type="radio" class="radio-answer-input" ansnum="1" name="preview-ans-1" value="">
+                                                                        <label class="radio-answer-label">...</label>
+                                                                </div>
+                                                                <div class="preview-answer-cont">
+                                                                        <input type="radio" class="radio-answer-input" ansnum="2" name="preview-ans-1" value="">
+                                                                        <label class="radio-answer-label">...</label>
+                                                                </div>
+                                                        </fieldset>
+                                                </div>
+                                        </div>
+                                        <p class="quiz-preview-error-label">Edit your Questions and you can preview the quiz here.</p>
                                 </div>
                         </div>
                         

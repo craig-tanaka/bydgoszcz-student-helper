@@ -871,4 +871,7 @@ button.remove-answer-btn {
         font-size: 1.2rem;
         padding: 0;
 }
+.quiz-preview-main-cont{
+        color: white;
+}
 /* #endregion create-module */
