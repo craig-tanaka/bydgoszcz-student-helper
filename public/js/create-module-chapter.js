@@ -15,7 +15,7 @@ function previewYoutubeLink(userLink) {
 
         if (videoID) {
                 let tempImg = new Image();
-                tempImg.src = `http://img.youtbe.com/vi/${videoID}/mqdefault.jpg`;
+                tempImg.src = `http://img.youtube.com/vi/${videoID}/mqdefault.jpg`;
                 tempImg.onload = function() {
                         if (tempImg.width === 120) {
                                 linkedVideoErrorLabel.innerHTML = "Youtube video not found, Please make sure you copied the link correctly."
