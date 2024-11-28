@@ -786,14 +786,15 @@ body.create-module h2{
 }
 .input-error-label{
         display: block;
-        color: red;
+        color: #df7272e0;
         font-weight: 600;
         text-align: center;
 }
 #create-module-main-details .input-error-label{
         margin-left: 0;
         opacity: 0;
-        margin-top: -1rem;
+        margin-top: 5px;
+        font-weight: 500;
 }
 body.create-module button.img-submit{
         margin-top: 1rem;

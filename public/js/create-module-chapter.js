@@ -1,41 +1,17 @@
 const videoLinkInput = document.querySelector('#youtube-video-link-input')
 const linkedVideoIframe = document.querySelector('.linked-video-iframe')
 const linkedVideoErrorLabel = document.querySelector('.linked-video-error-label')
-const mainDetailsSubmit = document.querySelector('#create-module-main-details input[type="submit"]')
+const formSubmitBtn = document.querySelector('.create-module-submit')
+const descriptionInput = document.querySelector('#chapter-description')
+const descriptionErrorlabel = document.querySelector('.input-error-label#create-module')
 
 let videoLinkID = '';
 
 videoLinkInput.addEventListener('blur', (event) => {
-        previewYoutubeLink(videoLinkInput.value)
+        event.preventDefault()
+        validateYoutubeLink(videoLinkInput.value)
 })
 
-
-function previewYoutubeLink(userLink) {
-        let videoID = extractVideoIDFromLink(userLink);
-
-        if (videoID) {
-                let tempImg = new Image();
-                tempImg.src = `http://img.youtube.com/vi/${videoID}/mqdefault.jpg`;
-                tempImg.onload = function() {
-                        if (tempImg.width === 120) {
-                                linkedVideoErrorLabel.innerHTML = "Youtube video not found, Please make sure you copied the link correctly."
-                                linkedVideoErrorLabel.style.color = "#cb6666"
-                                if (linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.remove("hidden")
-                                if(!linkedVideoIframe.classList.contains("hidden")) linkedVideoIframe.classList.add("hidden")
-                        } else {
-                                linkedVideoIframe.src = `https://www.youtube.com/embed/${videoID}`
-                                linkedVideoIframe.classList.remove('hidden')
-                                if(!linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.add("hidden")
-                        }
-                }
-                tempImg.onerror = function (error) {
-                                linkedVideoErrorLabel.innerHTML = "Youtube did not respond. Please Try Again Later and if the problem still persists please contact the website administrator"
-                                linkedVideoErrorLabel.style.color = "#cb6666"
-                                if (linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.remove("hidden")
-                                if(!linkedVideoIframe.classList.contains("hidden")) linkedVideoIframe.classList.add("hidden")
-                        }
-        }
-}
 function extractVideoIDFromLink(userLink) {
         let extractedID;
         
@@ -69,7 +45,67 @@ function extractVideoIDFromLink(userLink) {
         return null;
 }
 
+function validateYoutubeLink(userLink) {
+        return new Promise((resolve, reject) => {
+                let isVideoLinkValid = false;
+                const videoID = extractVideoIDFromLink(userLink);
 
-mainDetailsSubmit.addEventListener('click', (event) => {
-        alert('yooo')
+                const tempImg = new Image();
+                tempImg.src = `https://img.youtube.com/vi/${videoID}/mqdefault.jpg`;
+
+                tempImg.onload = function () {
+                if (tempImg.width === 120) {
+                        linkedVideoErrorLabel.innerHTML = "Youtube video not found, Please make sure you copied the link correctly.";
+                        linkedVideoErrorLabel.style.color = "#cb6666";
+                        if (linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.remove("hidden");
+                        if (!linkedVideoIframe.classList.contains("hidden")) linkedVideoIframe.classList.add("hidden");
+                        resolve(false); // Link is invalid
+                } else {
+                        linkedVideoIframe.src = `https://www.youtube.com/embed/${videoID}`;
+                        linkedVideoIframe.classList.remove('hidden');
+                        if (!linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.add("hidden");
+                        isVideoLinkValid = true;
+                        resolve(true); // Link is valid
+                }
+                };
+
+                tempImg.onerror = function (error) {
+                        linkedVideoErrorLabel.innerHTML = "Youtube did not respond. Please Try Again Later and if the problem still persists please contact the website administrator.";
+                        linkedVideoErrorLabel.style.color = "#cb6666";
+                        if (linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.remove("hidden");
+                        if (!linkedVideoIframe.classList.contains("hidden")) linkedVideoIframe.classList.add("hidden");
+                        resolve(false); // Link maybe be valid but img.youtube.com is not responding
+                };
+        });
+        }
+
+
+
+
+formSubmitBtn.addEventListener('click', (event) => {
+        event.preventDefault()
+        validateForm()
 })
+
+async function validateForm() {
+        let isFormValid = false
+
+        // The validation only returns true if the video is valid
+        if (await validateYoutubeLink(videoLinkInput.value)) {
+                isFormValid = true
+                videoLinkInput.style.outline = 'none'
+        } else
+                videoLinkInput.style.outline = '1px solid red'
+        
+        //checking if description is empty and hence validation is false
+        if (descriptionInput.value === "") {
+                isFormValid = false
+                descriptionInput.style.outline = '1px solid red'
+                descriptionErrorlabel.style.opacity = '1'
+        } else
+                descriptionInput.style.outline = 'none'
+        
+        if(isFormValid) descriptionErrorlabel.style.opacity = '0'
+
+        return isFormValid
+}
