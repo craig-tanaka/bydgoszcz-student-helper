@@ -46,7 +46,6 @@ createModuleSubmit.addEventListener('click', (event) => {
                         difficulty: moduleDifficultyInput.value,
                         description: moduleDescriptionInput.value,
                 }).then((docRef) => {
-                        // console.log("Document written with ID: ", docRef.id);
                         documentReferenceNumber = docRef.id;
 
                         // Hide main module details form and show picture select form
@@ -122,9 +121,10 @@ function addImageIDtoDocument(docRef) {
                 imageRef: docRef.id
         })
         .then(() => {
-                alert("Image ID added to Module ID");
+                window.location.href = `./create-module-chapter.html?mid=${docRef.id}&cid=1`
         })
         .catch((error) => {
                 console.error("Error writing document: ", error);
+                // todo: create error handler for failure to submit image url to database
         });
 }
