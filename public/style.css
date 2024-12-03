@@ -828,6 +828,14 @@ form#create-module-main-details{
         color: #88c2e9;
         text-align: center;
 }
+
+.continue-creation-form .form-row{
+        display: flex;
+        justify-content: center;
+}
+#create-another-chapter-btn{
+        background-color: #039be5;
+}
 /* _____________add-Quiz______________ */
 .added-answer-input-cont {
         display: flex;

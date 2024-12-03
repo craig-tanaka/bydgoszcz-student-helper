@@ -2,10 +2,23 @@ const videoLinkInput = document.querySelector('#youtube-video-link-input')
 const linkedVideoIframe = document.querySelector('.linked-video-iframe')
 const linkedVideoErrorLabel = document.querySelector('.linked-video-error-label')
 const formSubmitBtn = document.querySelector('.create-module-submit')
+const titleInput = document.querySelector('#chapter-title-input')
 const descriptionInput = document.querySelector('#chapter-description')
 const descriptionErrorlabel = document.querySelector('.input-error-label#create-module')
+const addQuizRadioInput = document.querySelector('.add-quiz-radio-option[value="Yes"]')
+const continueChapterCreationForm = document.querySelector('.continue-creation-form')
 
+const db = firebase.firestore();
 let videoLinkID = '';
+
+//grabs the url query paramters and stores them in variables
+const urlParams = new URLSearchParams(window.location.search)
+const moduleID = urlParams.get('mid')
+const chapterNumber = urlParams.get('cid')
+
+//adds the chapter number to page header ie. the H2 tag in the main element
+const pageHeader = document.querySelector('main h2')
+pageHeader.innerHTML = pageHeader.innerHTML + " " + chapterNumber
 
 videoLinkInput.addEventListener('blur', (event) => {
         event.preventDefault()
@@ -65,6 +78,7 @@ function validateYoutubeLink(userLink) {
                         linkedVideoIframe.classList.remove('hidden');
                         if (!linkedVideoErrorLabel.classList.contains("hidden")) linkedVideoErrorLabel.classList.add("hidden");
                         isVideoLinkValid = true;
+                        videoLinkID = videoID
                         resolve(true); // Link is valid
                 }
                 };
@@ -77,14 +91,35 @@ function validateYoutubeLink(userLink) {
                         resolve(false); // Link maybe be valid but img.youtube.com is not responding
                 };
         });
-        }
+}
 
 
 
 
 formSubmitBtn.addEventListener('click', (event) => {
         event.preventDefault()
-        validateForm()
+        if (!validateForm()) return;
+        
+        formSubmitBtn.classList.add
+        let hasQuiz = false
+        if(addQuizRadioInput.checked) hasQuiz = true
+        db.collection('modules').doc(moduleID).collection('chapters').doc(chapterNumber).set({
+                title: titleInput.value,
+                description: descriptionInput.value,
+                videoLinkID: videoLinkID,
+                hasQuiz: addQuizRadioInput.checked
+        }).then((docRef) => {
+                if (addQuizRadioInput.checked) {
+                        window.location.href = `./create-chapter-quiz.html?mid=${moduleID}&cid=${chapterNumber}`
+                } else {
+                        document.querySelector('.create-module-main').classList.add('hidden')
+                        continueChapterCreationForm.classList.remove('hidden')
+                }
+        }).catch((error) => {
+                // alert(error)
+                // console.log(error)
+                //todo create error catch
+        })
 })
 
 async function validateForm() {
@@ -104,8 +139,25 @@ async function validateForm() {
                 descriptionErrorlabel.style.opacity = '1'
         } else
                 descriptionInput.style.outline = 'none'
+        if (titleInput.value === "") {
+                isFormValid = false
+                titleInput.style.outline = '1px solid red'
+                descriptionErrorlabel.style.opacity = '1'
+        } else
+                titleInput.style.outline = 'none'
         
         if(isFormValid) descriptionErrorlabel.style.opacity = '0'
 
         return isFormValid
 }
+
+document.querySelector('#create-another-chapter-btn').addEventListener('click', (event) => {
+        event.preventDefault()
+        window.location.href = `./create-module-chapter.html?mid=${moduleID}&cid=${Number(chapterNumber) + 1}`
+})
+document.querySelector('#dont-create-another-chapter-btn').addEventListener('click', (event) => {
+        event.preventDefault()
+        window.location.href = `./module-view.html?mid=${moduleID}`
+})
+
+//todo: remove all console.logins

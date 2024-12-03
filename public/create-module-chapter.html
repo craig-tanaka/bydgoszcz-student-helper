@@ -33,7 +33,7 @@
 </head>
 
 <body class="home-main create-module create-module-chapter">
-        <!-- TODO: rename classnames in file correctly -->
+        <!-- TODO: Add chapter title -->
         <aside>
                 <h1>Bydgoszcz Student Helper</h1>
 
@@ -105,6 +105,10 @@
                         <div class="create-module-main">
                                 <form id="create-module-main-details" class="">
                                         <div class="form-row">
+                                                <label class="form-label">Chapter Title</label>
+                                                <input type="text" id="chapter-title-input" class="create-module-input">
+                                        </div>
+                                        <div class="form-row">
                                                 <label class="form-label">Youtube Link</label>
                                                 <input type="text" id="youtube-video-link-input" class="create-module-input">
                                         </div>
@@ -115,11 +119,11 @@
                                         <fieldset class="add-quiz">
                                                 <legend>Add Quiz After Chapter:</legend>
                                                 <div class="form-row">
-                                                        <input type="radio" class="add-quiz-radio-option" value="No" checked />
+                                                        <input name="add-quiz" type="radio" class="add-quiz-radio-option" value="No" checked />
                                                         <label class="add-quiz-label">No</label>
                                                 </div>
                                                 <div class="form-row">
-                                                        <input type="radio" class="add-quiz-radio-option" value="Yes" />
+                                                        <input name="add-quiz" type="radio" class="add-quiz-radio-option" value="Yes" />
                                                         <label class="add-quiz-label">Yes</label>
                                                 </div>
                                         </fieldset>
@@ -134,7 +138,13 @@
                                         <p class="linked-video-error-label">Please add a Youtube Link and you can preview the video here.</p>
                                 </div>
                         </div>
-                        
+                        <form class="continue-creation-form hidden">
+                                <p>Module Chapter Created, Do You Want To Create Another Chapter?</p>
+                                <span class="form-row">
+                                        <button id="create-another-chapter-btn">Yes</button>
+                                        <button id="dont-create-another-chapter-btn">No</button>
+                                </span>
+                        </form>
                 </div>
 
         </main>
