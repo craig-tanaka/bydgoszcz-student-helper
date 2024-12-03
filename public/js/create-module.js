@@ -47,7 +47,6 @@ createModuleSubmit.addEventListener('click', (event) => {
                         description: moduleDescriptionInput.value,
                 }).then((docRef) => {
                         documentReferenceNumber = docRef.id;
-
                         // Hide main module details form and show picture select form
                         document.querySelector('#create-module-main-details').classList.add('hidden')
                         document.querySelector('.create-img-cont').classList.remove('hidden')
@@ -95,36 +94,21 @@ imgInputSubmit.addEventListener('click', () => {
         }
 
         const file = imgInputElement.files[0];
-
         if (file) {
                 const reader = new FileReader();
                 reader.readAsDataURL(file);
                 reader.onloadend = () => {
                         let base64ImgString = reader.result.split(',')[1];
-                        db.collection("images").add({
+                        db.collection('modules').doc(documentReferenceNumber).collection('images').doc('module-img').set({
                                 imgData: base64ImgString
-                        }).then((docRef)=>{
-                                addImageIDtoDocument(docRef);
+                        }).then((docRef) => {
+                                window.location.href = `./create-module-chapter.html?mid=${documentReferenceNumber}&cid=1`
                         }).catch((error) => {
+                                alert('error')
                                 // if there is a field not filled shown error message else hide it
-                                imgInputErrorLabel.innerHTML = "Failed to submit please try again later, or contact out support team";
+                                imgInputErrorLabel.innerHTML = "Failed to submit image please try again later, or contact out support team";
                                 imgInputErrorLabel.style.opacity = 1;
-                                createModuleSubmit.classList.remove("hidden");
-                                // console.error("Error adding document: ", error);
                         });
                 }
         }
 })
-function addImageIDtoDocument(docRef) {
-        // Add image document ID to the modules document on firebase
-        db.collection("modules").doc(documentReferenceNumber).update({
-                imageRef: docRef.id
-        })
-        .then(() => {
-                window.location.href = `./create-module-chapter.html?mid=${docRef.id}&cid=1`
-        })
-        .catch((error) => {
-                console.error("Error writing document: ", error);
-                // todo: create error handler for failure to submit image url to database
-        });
-}
