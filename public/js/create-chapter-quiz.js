@@ -1,13 +1,23 @@
 const allQuestionsContainer = document.querySelector('.all-questions-container')
 const addQuestionBtn = document.querySelector('.add-question-btn')
+const submitQuizBtn = document.querySelector('input.create-module-submit')
+const quizErrorLabel = document.querySelector('.quiz-form-error-label')
+const continueChapterCreationForm = document.querySelector('.continue-creation-form')
 
+const db = firebase.firestore()
 let numOfQuestions = 1
 let currentQuestion = 1
+
+//grabs the url query paramters and stores them in variables
+const urlParams = new URLSearchParams(window.location.search)
+const moduleID = urlParams.get('mid')
+const chapterNumber = urlParams.get('cid')
 
 allQuestionsContainer.addEventListener('click', function (event) {
         event.preventDefault()
         if (event.target.classList.contains('add-answer-btn')) addAnswerToQuestion(event.target)
-        if(event.target.classList.contains('maximize-question-btn')) maximizeQuestion(event.target)
+        if (event.target.classList.contains('maximize-question-btn')) maximizeQuestion(event.target)
+        //todo add logic for removing an answer
 })
 allQuestionsContainer.addEventListener('input', (event)=> {
         updatePreview(event.target)
@@ -168,3 +178,88 @@ function updatePreview(typedElement) {
                 answerlabels[answerNumber - 1].innerHTML = typedElement.value
         }
 }
+
+submitQuizBtn.addEventListener('click', (event) => {
+        event.preventDefault()
+        if (!validateForm()) return
+        
+        let data = {}
+
+        const questionContainers = document.querySelectorAll('.question-container')
+        
+        for (let i = 0; i < questionContainers.length; i++){
+                const currentQuestionKey = "Question " + (i +1)
+                const question = questionContainers[i].querySelector('.quiz-question-input').value
+
+        
+                let questionData = {
+                        "Question" : question
+                }
+                
+                let answersData = {}
+                const answersContainer = questionContainers[i].querySelectorAll('.answer-input')
+                for (let index = 0; index < answersContainer.length; index++) {
+                        const currentAnswerkey = "Answer " + (index + 1)
+                        const answer = answersContainer[index].value
+                        
+                        
+                        answersData = {
+                                ...answersData,
+                                [currentAnswerkey] : answer
+                        }
+                }
+                questionData = {
+                        ...questionData,
+                        "Answers": answersData
+                }
+                data = {
+                        ...data,
+                        [currentQuestionKey] : questionData
+                }
+        }
+        
+        db.collection('modules').doc(moduleID).collection('chapters').doc(chapterNumber).update({
+                quiz: data
+        }).then((docRef) => {
+                document.querySelector('.create-module-main').classList.add('hidden')
+                continueChapterCreationForm.classList.remove('hidden')
+        }).catch((error) => {
+                // alert(error)
+                // console.log(error)
+                //todo create error catch
+        })
+})
+
+function validateForm() {
+        let isFormValid = true
+
+        document.querySelectorAll('.question-container').forEach((element) => {
+                const question = element.querySelector('.quiz-question-input')
+                if (question.value === '') {
+                        isFormValid = false
+                        question.style.outline = '1px solid red'
+                        quizErrorLabel.classList.remove('hidden')
+                }else question.style.outline = 'none'
+                
+                element.querySelectorAll('.answer-input').forEach((element) => {
+                        if (element.value === '') {
+                                isFormValid = false
+                                element.style.outline = '1px solid red'
+                                quizErrorLabel.classList.remove('hidden')
+                        }else element.style.outline = 'none'
+                })
+        })
+
+        // updatePreview()
+        if (isFormValid) quizErrorLabel.classList.add('hidden')
+        return isFormValid
+}
+
+document.querySelector('#create-another-chapter-btn').addEventListener('click', (event) => {
+        event.preventDefault()
+        window.location.href = `./create-module-chapter.html?mid=${moduleID}&cid=${Number(chapterNumber) + 1}`
+})
+document.querySelector('#dont-create-another-chapter-btn').addEventListener('click', (event) => {
+        event.preventDefault()
+        window.location.href = `./module-view.html?mid=${moduleID}`
+})
