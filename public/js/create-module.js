@@ -45,6 +45,9 @@ createModuleSubmit.addEventListener('click', (event) => {
                         name: moduleNameInput.value,
                         difficulty: moduleDifficultyInput.value,
                         description: moduleDescriptionInput.value,
+                        enrolled: 0,
+                        completers: 0,
+                        numOfChapters: 0
                 }).then((docRef) => {
                         documentReferenceNumber = docRef.id;
                         // Hide main module details form and show picture select form
