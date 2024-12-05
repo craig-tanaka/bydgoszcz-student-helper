@@ -99,8 +99,10 @@ imgInputSubmit.addEventListener('click', () => {
                 reader.readAsDataURL(file);
                 reader.onloadend = () => {
                         let base64ImgString = reader.result.split(',')[1];
+                        let imgType = reader.result.split(',')[0].match(/:(.*?);/)[1];
                         db.collection('modules').doc(documentReferenceNumber).collection('images').doc('module-img').set({
-                                imgData: base64ImgString
+                                imgData: base64ImgString,
+                                imgType: imgType
                         }).then((docRef) => {
                                 window.location.href = `./create-module-chapter.html?mid=${documentReferenceNumber}&cid=1`
                         }).catch((error) => {
