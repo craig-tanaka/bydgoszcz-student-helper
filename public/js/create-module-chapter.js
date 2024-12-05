@@ -109,6 +109,7 @@ formSubmitBtn.addEventListener('click', (event) => {
                 videoLinkID: videoLinkID,
                 hasQuiz: addQuizRadioInput.checked
         }).then((docRef) => {
+                updateChapterCount()
                 if (addQuizRadioInput.checked) {
                         window.location.href = `./create-chapter-quiz.html?mid=${moduleID}&cid=${chapterNumber}`
                 } else {
@@ -149,6 +150,15 @@ async function validateForm() {
         if(isFormValid) descriptionErrorlabel.style.opacity = '0'
 
         return isFormValid
+}
+
+function updateChapterCount() {
+        db.collection('modules').doc(moduleID).update({
+                numOfChapters: chapterNumber
+        }).catch(error => {
+                updateChapterCount()
+                //todo better handle this as this could cause an infinite loop
+        })
 }
 
 document.querySelector('#create-another-chapter-btn').addEventListener('click', (event) => {
