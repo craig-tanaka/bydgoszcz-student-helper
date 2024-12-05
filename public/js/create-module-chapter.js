@@ -157,7 +157,7 @@ document.querySelector('#create-another-chapter-btn').addEventListener('click', 
 })
 document.querySelector('#dont-create-another-chapter-btn').addEventListener('click', (event) => {
         event.preventDefault()
-        window.location.href = `./module-view.html?mid=${moduleID}`
+        window.location.href = `./module.html?mid=${moduleID}`
 })
 
 //todo: remove all console.logins
