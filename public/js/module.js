@@ -1,4 +1,6 @@
-const db = firebase.firestore();
+const enrollBtn = document.querySelector('.module-enroll')
+
+const db = firebase.firestore()
 
 //grabs the url query paramters and stores them in variables
 const urlParams = new URLSearchParams(window.location.search)
@@ -60,4 +62,7 @@ function addImageToDOM(imgDoc) {
         imgElement.src = imgSrc;
 }
 
-//Todo get a number of chapters in module
+enrollBtn.addEventListener('click', event => {
+        //Todo enroll student in modules
+        window.location.href = `./module-view.html?mid=${moduleID}&cid=1`
+})
