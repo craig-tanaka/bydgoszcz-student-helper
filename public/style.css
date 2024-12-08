@@ -604,7 +604,7 @@ img.continue-module-img {
         height: 100%;
 }
 .module-page-module-cont.tall .module-hero-img{
-        width: 75%;
+        width: 60%;
         height: 100%;
         object-fit: cover;
         object-position: center;
@@ -725,9 +725,6 @@ td.detail-detail {
 }
 .module-view.video .detail-title {
         font-weight: 500;
-}
-.module-view.video .module-description-cont {
-        margin-top: 1rem !important;
 }
 .module-view .tag {
         background: #1a0801;

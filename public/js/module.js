@@ -5,13 +5,15 @@ const db = firebase.firestore()
 //grabs the url query paramters and stores them in variables
 const urlParams = new URLSearchParams(window.location.search)
 const moduleID = urlParams.get('mid')
+let moduleData = {}
 
 //Gets Module info from database then calls the method that adds info to dom
 db.collection('modules').doc(moduleID).get()
         .then((doc) => {
                 if (doc.exists) {
-                        console.log(doc.data())
-                        addModuleInfoToDOM(doc.data())
+                        //todo check if student is enrolled or has finished module already if so hide enrolled button
+                        moduleData = doc.data()
+                        addModuleInfoToDOM(moduleData)
                 } else {
                         //todo handle doc not found problem
                 }
@@ -41,7 +43,6 @@ function getModuleImageFromDB() {
         db.collection('modules').doc(moduleID).collection('images').doc('module-img').get()
                 .then((doc) => {
                         if (doc.exists) {
-                                console.log(doc.data())
                                 addImageToDOM(doc.data())
                         } else {
                                 //todo handle doc not found problem
@@ -63,6 +64,17 @@ function addImageToDOM(imgDoc) {
 }
 
 enrollBtn.addEventListener('click', event => {
+        enrollBtn.classList.add('hidden')
         //Todo enroll student in modules
-        window.location.href = `./module-view.html?mid=${moduleID}&cid=1`
+        db.collection('modules').doc(moduleID).update({ 'enrolled': Number(moduleData.enrolled) + 1 })
+                .then(docRef => {
+
+                        startModule()
+                }).catch(error => {
+                        //todo handle error
+                })
 })
+
+function startModule() {
+        window.location.href = `./chapter-view.html?mid=${moduleID}&cid=1`
+}

@@ -29,11 +29,11 @@
       to avoid connecting the SDK to running emulators.
     -->
         <script defer src="/__/firebase/init.js?useEmulator=false"></script>
-        <script defer src="./js/home.js"></script>
+        <script defer src="./js/chapter-view.js"></script>
 </head>
 
 <body class="home-main">
-        <aside>
+        <aside class="hidden">
                 <h1>Bydgoszcz Student Helper</h1>
 
                 <ul class="sidebar-links-list">
@@ -102,7 +102,8 @@
                 <div class="module-view video">
                         <div class="module-view-main">
                                 <img src="./img/pexels-festus-obi-30040337-10743369.jpg" alt="" class="video">
-                                <div class="notes-and-comments-cont">
+                                <iframe class="linked-video-iframe hidden" src=""></iframe>
+                                <!-- <div class="notes-and-comments-cont">
                                         <span class="notes-or-comments-selector-cont">
                                                 <h3 class="selector notes" style="display:none;">notes</h3>
                                                 <h3 class="selector comments">Comments</h3>
@@ -178,10 +179,11 @@
                                                         </span>
                                                 </div>
                                         </div>
-                                </div>
+                                </div> -->
                         </div>
-                        <div class="module-view-sidebar">
-                                <table class="module-details">
+                        <!-- todo delete module-details in this html file and in css -->
+                         <div class="module-view-sidebar">
+                                <!--<table class="module-details">
                                         <tbody>
                                                 <tr class="detail">
                                                         <td class="detail-title">Lecture Type</td>
@@ -200,21 +202,27 @@
                                                         <td class="detail-detail">Quiz</td>
                                                 </tr>
                                         </tbody>
-                                </table>
+                                </table> -->
                                 <div class="module-description-cont">
                                         <h2>Moving Around in Bydgoszcz</h2>
-                                        <div class="module-tags">
+                                        <!-- Todo delete tags in html and css -->
+                                        <!-- <div class="module-tags">
                                                 <span class="tag">Beginner</span>
                                                 <span class="tag">Urban Navigation</span>
                                                 <span class="tag">Essentials</span>
                                                 <span class="tag">Student Life</span>
                                                 <span class="tag">Public Transit</span>
-                                        </div>
+                                        </div> -->
                                         <p class="module-actual-description">
                                                 This module introduces students to the essential locations, resources, and cultural hotspots within their new city. Through guided visits, interactive maps, and insider tips, students will explore key landmarks, learn practical navigation skills, and gain insights into local history and customs. From transportation hubs and study-friendly cafés to museums and student-friendly neighborhoods, this module is designed to help students feel at home and make the most of their urban environment. Join us for an engaging journey that combines discovery with community connection, setting a strong foundation for living and learning in your new city.
                                         </p>
+                                        <div class="chapter-button-row">
+                                                <button class="prev-chapter-btn hidden">Previous Chapter</button>
+                                                <button class="next-chapter-btn">Next Chapter</button>
+                                        </div>
                                 </div>
-                                <div class="module-chapters-cont">
+                                <!-- Todo delete module chapters preview here and in css -->
+                                <!-- <div class="module-chapters-cont">
                                         <h3 class="module-chapters-title">This module has the following chapters:</h3>
                                         <ul class="module-chapters">
                                                 <li class="module-chapter">Navigation Essentials: Transportation and Transit Tips</li>
@@ -225,7 +233,7 @@
                                                 <li class="module-chapter">Safety and Savvy: Staying Safe and Informed</li>
                                                 <li class="module-chapter">Resource Roundup: Medical, Financial, and Essential Services</li>
                                         </ul>
-                                </div>
+                                </div> -->
                         </div>
                 </div>
 
