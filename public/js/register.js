@@ -78,11 +78,12 @@ function validateForm() {
 function createUserDocument(user) {
         userName = document.querySelector("input[name='name']").value;
         userEmail = document.querySelector("input[name='email']").value;
+        let isAdmin = document.querySelector("input[name='admin']").checked;
 
         db.collection('users').doc(user.uid).set({
                 name: userName,
                 email: userEmail,
-                isAdmin: false
+                isAdmin: isAdmin
         }).then(doc => {
                 window.location.href = './home.html'
         })
