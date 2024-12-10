@@ -210,6 +210,17 @@ em.quiz-progress {
 
 
 /* #region Login */
+body.auth {
+        display: initial;
+}
+h1.auth{
+        color: white;
+        text-align: center !important;
+        margin-top: 5rem;
+}
+body.auth form{
+        margin-top: 5rem;
+}
 #login-main .form-row {
         display: flex;
         justify-content: space-between;
@@ -221,7 +232,11 @@ em.quiz-progress {
 }
 
 #login-main label {
-        margin-right: 1em;
+        margin-right: 2rem;
+        text-align: left;
+}
+#login-main input{
+        width: initial;
 }
 
 #login-main .form-row.submit-row {
@@ -231,9 +246,9 @@ em.quiz-progress {
 #login-main .form-submit {
         margin: 0;
         background: none;
-        color: #16265d;
+        color: white;
         padding: 10px;
-        border: 1px solid #16265d;
+        border: 1px solid white;
 }
 
 #login-main .form-submit:focus,
@@ -247,6 +262,7 @@ em.quiz-progress {
 }
 #register-error-label{
         color: transparent;
+        font-weight: 900;
 }
 /* #endregion */
 

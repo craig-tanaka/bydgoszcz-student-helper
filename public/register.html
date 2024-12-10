@@ -32,15 +32,18 @@
         <script defer src="./js/register.js"></script>
 </head>
 
-<body>
+<body class="home-main auth">
         <!-- The surrounding HTML i#s left untouched by FirebaseUI.
          Your app may use that space for branding, controls and other customizations.-->
-        <h1>Bydgoszcz Student Helper</h1>
+        <h1 class="auth">Bydgoszcz Student Helper</h1>
         <div id="firebaseui-auth-container"></div>
-</body>
         <form id="login-main">
                 <h2>Register</h2>
 
+                <div class="form-row">
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name">
+                </div>
                 <div class="form-row">
                         <label for="email">Email</label>
                         <input type="email" name="email">
@@ -55,10 +58,11 @@
                 </div>
 
                 <div class="form-row submit-row">
-                        <label id="register-error-label" class="hidden"></label>
+                        <label id="register-error-label"></label>
                         <input id="register-form-submit" class="form-submit" value="Submit"  type="submit">
                 </div>
         </div>
 
+</body>
 
 </html>
