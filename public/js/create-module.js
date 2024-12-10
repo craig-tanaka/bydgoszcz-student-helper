@@ -72,7 +72,7 @@ function allFieldsFilled() {
         if (moduleDifficultyInput.value == "") {
                 moduleDifficultyInput.style.outline = "1px solid red";
                 allfilled = false;
-        }else moduleDifficultyInput.style.outline = "none";
+        }else moduleDifficultyInput.style.outline = "none"; //Todo limit the text to a spoecific number here and in the chapter description
 
         if (moduleDescriptionInput.value == "") {
                 moduleDescriptionInput.style.outline = "1px solid red";
