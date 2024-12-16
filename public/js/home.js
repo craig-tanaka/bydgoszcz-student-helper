@@ -74,10 +74,21 @@ function addModuleEventListeners() {
 
                         modulePreviewCont.appendChild(moduleCont)
                         document.querySelector('.module-preview-cont').style.display = 'initial';
+                        addModulePreviewButtonEventListeners()
                 });
         });
 }
 
+function addModulePreviewButtonEventListeners(){
+        const modulePreviewContainer = document.querySelector('.module-preview-cont')
+        const startbtn = modulePreviewContainer.querySelector('.start-now')
+        const watchlistBtn = modulePreviewContainer.querySelector('.watchlist')
+
+        startbtn.addEventListener('click', event => {
+                const mid = event.target.id
+                window.location.href = `./module.html?mid=${mid}`
+        })
+}
 
 document.querySelector('.exit-module-preview').addEventListener('click', event => {
         //hides the preview windo and then removes the module info from the preview cont so that when module preview is reenabled that module info is gone
