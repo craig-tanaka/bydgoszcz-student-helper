@@ -45,7 +45,6 @@ function addModuleToDOM(moduleDoc, imgDoc) {
                                 <span class="number-of-views">1546</span>
                         </span>
                 </span>`
-        // moduleContainer.querySelector('.module-img').src = imgSrc
         moduleRow.appendChild(moduleContainer)
 }
 function addModuleEventListeners() {
