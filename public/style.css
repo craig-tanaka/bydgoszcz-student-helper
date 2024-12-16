@@ -470,6 +470,9 @@ img.continue-module-img {
         display: flex;
         justify-content: flex-start;
 }
+.module-preview-button-row button:first-of-type{
+        margin-left: 0;
+}
 .hero-button,
 .module-preview-button{
         margin-left: 0;
