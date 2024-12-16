@@ -50,7 +50,6 @@ function addModuleToDOM(moduleDoc, imgDoc) {
 function addModuleEventListeners() {
         document.querySelectorAll('.module-img').forEach((el) => {
                 el.addEventListener('click', (event) => {
-                        alert('yooo')
                         // Firstly this gets info about the specific module from the image that was click and its surronding elements instead of requerying the db
                         const moduleElement = event.target.parentElement
                         const moduleID = moduleElement.id
