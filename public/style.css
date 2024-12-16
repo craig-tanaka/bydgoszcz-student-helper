@@ -468,10 +468,16 @@ img.continue-module-img {
 .module-preview-button-row{
         margin-top: 1rem;
         display: flex;
-        justify-content: flex-start;
+        width: 25rem;
+        justify-content: space-between;
 }
+.hero-button-row button:first-of-type,
 .module-preview-button-row button:first-of-type{
         margin-left: 0;
+}
+.hero-button-row button:last-of-type,
+.module-preview-button-row button:last-of-type{
+        margin-right: 0;
 }
 .hero-button,
 .module-preview-button{
