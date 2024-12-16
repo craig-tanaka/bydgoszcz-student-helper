@@ -502,6 +502,12 @@ img.continue-module-img {
         color: #e2f2fdbd;
         margin-right: 2rem;
 }
+.other-modules 
+.module {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+}
 .module-img {
         width: 10rem;
         height: 10rem;
@@ -513,11 +519,20 @@ img.continue-module-img {
 .module-name {
         margin: 0;
         font-weight: 300;
+        width: 10rem;
 }
 .module-details {
         display: flex;
         justify-content: space-between;
         margin: 0 5px;
+}
+.other-modules .module-details{
+        background: none;
+        color: white;
+        margin-left: 0;
+}
+.other-modules .module-name{
+        font-size: 0.9em;
 }
 .module-details > span {
         display: flex;
@@ -525,7 +540,6 @@ img.continue-module-img {
 }
 .module-details img {
         width: 20px;
-        margin-right: 5px;
 }
 /* #endregion home styling */
 
