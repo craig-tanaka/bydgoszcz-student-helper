@@ -68,8 +68,8 @@ function addModuleEventListeners() {
                                 <h2 class="module-preview-name">${moduleTitle}</h2>
                                 <p class="module-preview-description">${moduleDescription}</p>
                                 <span class="module-preview-button-row">
-                                        <button id="${moduleID} class="module-preview-button start-now">Start-Now</button>
-                                        <button id="${moduleID} class="module-preview-button watchlist">Add to Watchlist</button>
+                                        <button id="${moduleID}" class="module-preview-button start-now">Start-Now</button>
+                                        <button id="${moduleID}" class="module-preview-button watchlist">Add to Watchlist</button>
                                 </span>`
 
                         modulePreviewCont.appendChild(moduleCont)
