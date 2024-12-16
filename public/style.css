@@ -897,3 +897,59 @@ button.remove-answer-btn {
         color: white;
 }
 /* #endregion create-module */
+
+/* #region watchlist page */
+.watchlist-body {
+        color: white;
+}
+.watchlist-body .module-cont{
+        position: relative;
+}
+.watchlist-body h2 {
+        text-align: center;
+}
+
+.watchlist-body section.watchlist-modules {
+        display: flex;
+        flex-wrap: wrap;
+}
+
+.watchlist-body .module-title {
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+        width: 10rem;
+        padding: 0 6px 7px;
+        font-size: 0.9em;
+}
+
+.watchlist-body .module-cont {
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+}
+
+.watchlist-body .module-btn{
+        position: absolute;
+        font-size: 10px;
+        padding: 11px;
+        margin-left: 3rem;
+}
+.watchlist-body .module-btn.start{
+        top: 3.5rem;
+        background: #265473;;
+}
+.watchlist-body .module-btn.remove{
+        top: 6rem;
+        margin-left: 2.7rem;
+}
+.watchlist-body .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #11253369;
+        box-shadow: inset 1px 1px 3px 0 black;
+        border-radius: 5px;
+}
+/* #endregion watchlist page */
