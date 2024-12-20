@@ -1,6 +1,16 @@
 const moduleRow = document.querySelector('.module-row')
 const db = firebase.firestore()
 
+let userID;
+
+firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+                userID = user.uid
+        } else {
+                // todo Show error if user not logged
+        }
+});
+
 async function getModulesFromDB() {
         try {
                 const docs = await db.collection('modules').get()
@@ -82,12 +92,44 @@ function addModuleEventListeners() {
 function addModulePreviewButtonEventListeners(){
         const modulePreviewContainer = document.querySelector('.module-preview-cont')
         const startbtn = modulePreviewContainer.querySelector('.start-now')
-        const watchlistBtn = modulePreviewContainer.querySelector('.watchlist')
 
         startbtn.addEventListener('click', event => {
                 const mid = event.target.id
                 window.location.href = `./module.html?mid=${mid}`
         })
+        document.querySelector('.module-preview-button.watchlist').addEventListener('click', checkIfModuleInWatchlist)
+}
+
+function checkIfModuleInWatchlist(event) {
+        document.querySelector('.module-preview-button.watchlist').removeEventListener('click', checkIfModuleInWatchlist)
+        const moduleID = event.target.id
+
+        db.collection('users').doc(userID).get()
+                .then(doc => {
+                        if (doc.exists) {
+                                const arrayField = doc.data().watchlist;
+                                if (arrayField.includes(moduleID)) {
+                                        document.querySelector('.module-preview-button.watchlist').innerHTML = 'Module already in watchlist'
+                                } else {
+                                        addToWatchlist(moduleID)
+                                }
+                        } else {
+                                document.querySelector('.module-preview-button.watchlist').innerHTML = 'User Does Not Exist'
+                        }
+                }).catch(error => {
+                        console.error('Error Contact Admin!');
+                });
+}
+
+function addToWatchlist(moduleID) {
+        db.collection('users').doc(userID).update({
+                        watchlist: firebase.firestore.FieldValue.arrayUnion(moduleID)
+                }).then(() => {
+                        document.querySelector('.module-preview-button.watchlist').innerHTML = 'Module Added To WatchList'
+                }).catch(error => {
+                        // todo make error 
+                        console.error('Error adding value to array:', error);
+                });
 }
 
 document.querySelector('.exit-module-preview').addEventListener('click', event => {
