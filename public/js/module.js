@@ -68,13 +68,8 @@ enrollBtn.addEventListener('click', event => {
         //Todo enroll student in modules
         db.collection('modules').doc(moduleID).update({ 'enrolled': Number(moduleData.enrolled) + 1 })
                 .then(docRef => {
-
-                        startModule()
+                        window.location.href = `./chapter-view.html?mid=${moduleID}&cid=1`
                 }).catch(error => {
                         //todo handle error
                 })
 })
-
-function startModule() {
-        window.location.href = `./chapter-view.html?mid=${moduleID}&cid=1`
-}
