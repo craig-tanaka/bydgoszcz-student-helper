@@ -1,6 +1,16 @@
 const enrollBtn = document.querySelector('.module-enroll')
+const add2WatchListBtn = document.querySelector('button.add-to-watchlist')
 
 const db = firebase.firestore()
+let userID;
+firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+                userID = user.uid
+        } else {
+                // todo Show error if user not logged
+        }
+});
+
 
 //grabs the url query paramters and stores them in variables
 const urlParams = new URLSearchParams(window.location.search)
@@ -73,3 +83,34 @@ enrollBtn.addEventListener('click', event => {
                         //todo handle error
                 })
 })
+add2WatchListBtn.addEventListener('click', checkIfModuleInWatchlist)
+
+function checkIfModuleInWatchlist(event) {
+        add2WatchListBtn.removeEventListener('click', checkIfModuleInWatchlist)
+        db.collection('users').doc(userID).get()
+                .then(doc => {
+                        if (doc.exists) {
+                                const arrayField = doc.data().watchlist;
+                                if (arrayField.includes(moduleID)) {
+                                        add2WatchListBtn.innerHTML = 'Module already in watchlist'
+                                } else {
+                                        addToWatchlist()
+                                }
+                        } else {
+                                add2WatchListBtn.innerHTML = 'Please Login First'
+                        }
+                }).catch(error => {
+                        console.error('Error Contact Admin!');
+                });
+}
+
+function addToWatchlist() {
+        db.collection('users').doc(userID).update({
+                        watchlist: firebase.firestore.FieldValue.arrayUnion(moduleID)
+                }).then(() => {
+                        add2WatchListBtn.innerHTML = 'Module Added To WatchList'
+                }).catch(error => {
+                        // todo make error 
+                        console.error('Error adding value to array:', error);
+                });
+}
