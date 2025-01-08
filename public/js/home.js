@@ -43,6 +43,12 @@ async function setHeroModule(modules) {
         const imgData = imgDoc.data().imgData
         const imgSrc = `data:${imgType};base64,${imgData}`;
         document.querySelector('div.hero-module').style.backgroundImage = `url(${imgSrc})`
+        
+        const heroAddToWatchlist = document.querySelector('.hero-button.watchlist')
+        heroAddToWatchlist.id = modules[randomNum].id
+        heroAddToWatchlist.addEventListener('click', event => {
+                checkIfModuleInWatchlist(event)
+        })
 }
 
 function addModuleToDOM(moduleDoc, imgDoc) {
@@ -119,31 +125,34 @@ function addModulePreviewButtonEventListeners(){
 }
 
 function checkIfModuleInWatchlist(event) {
-        document.querySelector('.module-preview-button.watchlist').removeEventListener('click', checkIfModuleInWatchlist)
+        try { // in try block as the hero watchlist button wont work
+                document.querySelector('.module-preview-button.watchlist').removeEventListener('click', checkIfModuleInWatchlist)
+        } catch{}
         const moduleID = event.target.id
+        const clickedBtn = event.target
 
         db.collection('users').doc(userID).get()
                 .then(doc => {
                         if (doc.exists) {
                                 const arrayField = doc.data().watchlist;
                                 if (arrayField.includes(moduleID)) {
-                                        document.querySelector('.module-preview-button.watchlist').innerHTML = 'Module already in watchlist'
+                                        clickedBtn.innerHTML = 'Module already in watchlist'
                                 } else {
-                                        addToWatchlist(moduleID)
+                                        addToWatchlist(moduleID, clickedBtn)
                                 }
                         } else {
-                                document.querySelector('.module-preview-button.watchlist').innerHTML = 'User Does Not Exist'
+                                clickedBtn.innerHTML = 'User Does Not Exist'
                         }
                 }).catch(error => {
                         console.error('Error Contact Admin!');
                 });
 }
 
-function addToWatchlist(moduleID) {
+function addToWatchlist(moduleID, clickedBtn) {
         db.collection('users').doc(userID).update({
                         watchlist: firebase.firestore.FieldValue.arrayUnion(moduleID)
                 }).then(() => {
-                        document.querySelector('.module-preview-button.watchlist').innerHTML = 'Module Added To WatchList'
+                        clickedBtn.innerHTML = 'Module Added To WatchList'
                 }).catch(error => {
                         // todo make error 
                         console.error('Error adding value to array:', error);
