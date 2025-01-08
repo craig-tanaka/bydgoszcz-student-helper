@@ -1,6 +1,7 @@
 const moduleRow = document.querySelector('.module-row')
 const db = firebase.firestore()
 
+
 let userID;
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -11,9 +12,11 @@ firebase.auth().onAuthStateChanged((user) => {
         }
 });
 
+
 async function getModulesFromDB() {
         try {
                 const docs = await db.collection('modules').get()
+                setHeroModule(docs.docs)
                 for (const doc of docs.docs) {
                         moduleDoc = doc
                         const imgDoc = await db.collection('modules').doc(doc.id).collection('images').doc('module-img').get()
@@ -26,6 +29,21 @@ async function getModulesFromDB() {
         }
 }
 getModulesFromDB()
+
+// Sets random module from collection as Hero Moduels
+async function setHeroModule(modules) {
+        const randomNum = Math.floor(Math.random() * modules.length)
+        let homeModule = modules[randomNum].data()
+
+        document.querySelector('.hero-module-name').innerHTML = homeModule.name
+        document.querySelector('.hero-module-description').innerHTML = homeModule.description
+
+        const imgDoc = await db.collection('modules').doc(modules[randomNum].id).collection('images').doc('module-img').get()
+        const imgType = imgDoc.data().imgType
+        const imgData = imgDoc.data().imgData
+        const imgSrc = `data:${imgType};base64,${imgData}`;
+        document.querySelector('div.hero-module').style.backgroundImage = `url(${imgSrc})`
+}
 
 function addModuleToDOM(moduleDoc, imgDoc) {
         let module = moduleDoc.data()
