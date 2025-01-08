@@ -4,7 +4,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bydgoszcz Student Helper | Login</title>
+        <title>Bydgoszcz Student Helper | Register</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
@@ -32,15 +32,11 @@
         <script defer src="./js/login.js"></script>
 </head>
 
-<body>
-        <!-- The surrounding HTML i#s left untouched by FirebaseUI.
-         Your app may use that space for branding, controls and other customizations.-->
-        <h1>Bydgoszcz Student Helper</h1>
-        <div id="firebaseui-auth-container"></div>
-</body>
+<body class="home-main auth">
+        <h1 class="auth">Bydgoszcz Student Helper</h1>
         <form id="login-main">
-                <h2>LOGIN</h2>
 
+                <h2>Register</h2>
                 <div class="form-row">
                         <label for="email">Email</label>
                         <input type="email" name="email">
@@ -49,12 +45,12 @@
                         <label for="password">Password</label>
                         <input type="password" name="password">
                 </div>
-
                 <div class="form-row submit-row">
-                        <label id="register-error-label" class="hidden"></label>
-                        <input class="form-submit" value="Submit"  type="submit">
+                        <label id="register-error-label"></label>
+                        <input id="register-form-submit" class="form-submit" value="Submit"  type="submit">
                 </div>
         </div>
 
+</body>
 
 </html>
