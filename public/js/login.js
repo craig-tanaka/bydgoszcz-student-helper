@@ -1,7 +1,7 @@
 const error_label = document.querySelector('#register-error-label')
 const submit_btn = document.querySelector('.form-submit')
 
-let email, password, repeat_password;
+let email, password
 
 submit_btn.addEventListener('click', (e) => {
         e.preventDefault()
@@ -12,16 +12,13 @@ submit_btn.addEventListener('click', (e) => {
         error_label.style.color = 'red';
         error_label.classList.remove('hidden');
 
-        console.log('yooo');
-
         firebase.auth().signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                         // Signed in 
-                        console.log(userCredential)
-                        alert('user logged in');
-                        // ...
+                        window.location.href = './index.html'
                 })
                 .catch((error) => {
+                        //todo handle error
                         let errorCode = error.code;
                         let errorMessage = error.message;
                         alert('user login failed');
