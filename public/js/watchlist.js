@@ -26,6 +26,9 @@ function getUserWatchlist(userID) {
 
 async function getModules(watchlist) {
         try {
+                if (watchlist.length === 0) {
+                        document.querySelector('.watchlist-modules').innerHTML = 'There are no modules in your watchlist'
+                }
                 for (const moduleID of watchlist) {
                         const moduleDoc = await db.collection('modules').doc(moduleID).get()
                         const imgDoc = await db.collection('modules').doc(moduleID).collection('images').doc('module-img').get()
