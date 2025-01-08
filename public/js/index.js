@@ -1,7 +1,6 @@
 const moduleRow = document.querySelector('.module-row')
 const db = firebase.firestore()
 
-
 let userID;
 
 firebase.auth().onAuthStateChanged((user) => {

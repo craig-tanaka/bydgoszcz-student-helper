@@ -29,233 +29,120 @@
       to avoid connecting the SDK to running emulators.
     -->
         <script defer src="/__/firebase/init.js?useEmulator=false"></script>
-        <script defer src="./js/quiz.js"></script>
+        <script defer src="./js/index.js"></script>
 </head>
 
-<body class="hidden">
-        <nav>
-                <a href="./login.html" class="nav-link">Login</a>
-                <a href="./register.html" class="nav-link">Register</a>
-        </nav>
-        <div id="message">
-                <div class="message-language-select">
-                        <p>Please Select Your Language | виберіть свою мову</p>
-                        <span class="button-row">
-                                <button class="en">English</button>
-                                <button class="uk">українська</button>
+<body class="home-main">
+        <aside>
+                <h1>Bydgoszcz Student Helper</h1>
+
+                <ul class="sidebar-links-list">
+                        <a href="#" class="sidebar-link">
+                                <img src="./img/home-icon-outlined.png" class="sidebar-link-icon">
+                                <span>Home</span>
+                        </a>
+                        <a href="./watchlist.html" class="sidebar-link">
+                                <img src="./img/watchlist-icon.webp" class="sidebar-link-icon">
+                                <span>Watchlist</span>
+                        </a>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/Favorite-icon.png" class="sidebar-link-icon">
+                                <span>Favorites</span>
+                        </a>
+                        <hr>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/profile-icon.png" class="sidebar-link-icon">
+                                <span>Profile</span>
+                        </a>
+                        <a href="" class="sidebar-link">
+                                <img src="./img/settings-icon.png" class="sidebar-link-icon">
+                                <span>Settings</span>
+                        </a>
+                </ul>
+
+                <h2 class="continue-list-header">Continue Module</h2>
+                <ul class="siderbar-continue-list">
+                        <div class="continue-module-cont">
+                                <span class="continue-module-details">
+                                        <img src="./img/sample-polish-module-img.webp" alt="" class="continue-module-img">
+                                        <span class="continue-module-text">
+                                                <h4 class="continue-module-name">Polish 101</h4>
+                                                <span class="module-bookmark-place">Chapter 3</span>
+                                        </span>
+                                </span>
+                                <img src="./img/play-icon.png" alt="" class="continue-module-play">
+                        </div>
+                        <div class="continue-module-cont">
+                                <span class="continue-module-details">
+                                        <img src="./img/sample-polish-module-img.webp" alt="" class="continue-module-img">
+                                        <span class="continue-module-text">
+                                                <h4 class="continue-module-name">Polish 101</h4>
+                                                <span class="module-bookmark-place">Chapter 3</span>
+                                        </span>
+                                </span>
+                                <img src="./img/play-icon.png" alt="" class="continue-module-play">
+                        </div>
+                </ul>
+        </aside>
+        <main>
+                <div class="header-row">
+                        <button class="filter-btn">Filters</button>
+                        <span class="search-cont">
+                                <img src="./img/search-icon.png" class="search-img">
+                                <input type="search" class="search-input">
+                        </span>
+                        <span class="account-cont">
+                                <img src="./img/sample-profile-pic.webp" class="account-img">
+                                <span class="account-text">
+                                        <span class="account-name">John Doe</span>
+                                        <span class="account-name">johndoe@gmail.com</span>
+                                </span>
                         </span>
                 </div>
-                <div class="starting-message en hidden">
-                        <h1>Welcome to Bydgoszcz Student Helper</h1>
-                        <p>
-                                Our Goal is to help foreign students prepare and inturn better acclimate to university
-                                life in
-                                Bydgoszcz or Poland in general. <br>
-                                Your answers here will help us tailor our webapp and make it more relevant and useful to
-                                fututre
-                                students like you.
-                        </p>
-                        <button id="message-begin-btn">Begin Quiz</button>
-                        <em class="subtext">The Quiz is anonymous and you will not need to provide personal
-                                information</em>
+                <div class="hero-module">
+                        <span class="now-popular">
+                                <img src="./img/fire-icon.png" alt="" class="now-popular-img">
+                                <span class="now-popular-text">Now Popular</span>
+                        </span>
+
+                        <div class="hero-module-main">
+                                <span class="hero-module-tags">
+                                        <span class="tag">For Starters</span>
+                                        <span class="tag">Most Recommended</span>
+                                </span>
+                                <h2 class="hero-module-name">Moving Around in Bydgoszcz</h2>
+                                <p class="hero-module-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur repellat dolorem libero eius quod culpa eaque, sunt autem aliquam placeat?</p>
+                                <span class="hero-button-row">
+                                        <button class="hero-button start-now">Start-Now</button>
+                                        <button class="hero-button watchlist">Add to Watchlist</button>
+                                </span>
+                        </div>
                 </div>
-                <div class="starting-message uk hidden">
-                        <h1>Ласкаво просимо в Bydgoszcz Student Helper</h1>
-                        <p>
-                                Наша мета – допомогти іноземним студентам підготуватися та краще звикнути до
-                                університетського життя
-                                Бидгощ чи взагалі Польща. <br>
-                                Ваші відповіді допоможуть нам адаптувати нашу веб-програму та зробити її більш
-                                актуальною та корисною для майбутнього
-                                такі студенти, як ти.
-                        </p>
-                        <button id="message-begin-btn">Розпочати вікторину</button>
-                        <em class="subtext">Вікторина є анонімною, і вам не потрібно буде надавати особисту
-                                інформацію</em>
+                <div class="other-modules">
+                        <span class="module-type-selector">
+                                <span class="type">Popular</span>
+                                <span class="type active">Recommended</span>
+                                <span class="type">New</span>
+                        </span>
+                        <span class="module-row">
+                        </span>
                 </div>
 
+        </main>
 
-                <div class="finishing-message en hidden">
-                        <h1>Thank You For Your Contribution</h1>
-                        <p>
-                                Thank you so much for taking the time to complete our quiz! Your participation and
-                                insights are incredibly valuable to us. Your feedback helps us improve and create even
-                                better content in the future. <br><br>
-                                If you have any comments or suggestions, please feel free to share them with us.
-                        </p>
-                </div>
-                <div class="finishing-message uk hidden">
-                        <h1>Дякуємо за ваш внесок</h1>
-                        <p>
-                                Щиро дякуємо, що знайшли час, щоб виконати нашу вікторину! Ваша участь і ідеї неймовірно
-                                цінні для нас. Ваші відгуки допомагають нам покращувати та створювати ще кращий вміст у
-                                майбутньому.
-                                <br><br>
-                                Якщо у вас є коментарі чи пропозиції, будь ласка, поділіться ними з нами.
-                        </p>
+
+        <div class="module-preview-cont">
+                <button class="exit-module-preview">
+                        <img src="./img/exit-icon.png" alt="exit" class="exit-module-preview-img">
+                </button>
+                <div class="module-preview">
+                        <span class="now-popular">
+                                <img src="./img/fire-icon.png" alt="" class="now-popular-img">
+                                <span class="now-popular-text">Now Popular</span>
+                        </span>
                 </div>
         </div>
 
-        <form class="quiz en hidden">
-                <div class="form-row">
-                        <label for="qn1">What was the most important thing you brought from home?</label>
-                        <textarea name="qn1"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn2">What locations in Bydgoszcz are the most important for you?</label>
-                        <textarea name="qn2"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn4">What where the things that made it hard for you in your first year? 
-                        <br>(If you are 1st year, what are things that made if hard for you in the first semester)</label>
-                        <textarea name="qn4"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn3">What helped you get through your first year at University?
-                        <br>(If you are 1st year, what helped you get through your first semester)</label>
-                        <textarea name="qn3"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn5">Was there anything you left at home, that you wish you brought with you. If so what it is it?</label>
-                        <textarea name="qn5"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn6">What other parts of university life do you wish you had been better prepared for?</label>
-                        <textarea name="qn6"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn7">How did you manage your time between academic responsibilities, social
-                                activities (social activities such as joining clubs and playing sports) and a job</label>
-                        <textarea name="qn7"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn8">How did you handle stress and stay mentally healthy</label>
-                        <textarea name="qn8"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn9">How important was it for you to have access to a mentor or
-                                guidance from older students or faculty members?</label>
-                        <textarea name="qn9"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn10">What role did extracurricular activities (For Example: Playing Sports, Going to the University gym) or campus involvement play in
-                                your overall university experience?</label>
-                        <textarea name="qn10"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn11">How did you go about selecting your modules and deciding on a major
-                                or academic path?</label>
-                        <textarea name="qn11"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn12">What were some of the biggest misunderstandings you had about
-                                university life before starting?</label>
-                        <textarea name="qn12"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn13">How did you handle academic challenges such as difficult modules or
-                                exams?</label>
-                        <textarea name="qn13"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn14">What techniques and resources did you use to study and pass some exams?</label>
-                        <textarea name="qn14"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn15">How did you establish a support network or community at your
-                                university?</label>
-                        <textarea name="qn15"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn16">What advice would you give to incoming students to help them
-                                prepare for university life and academics?</label>
-                        <textarea name="qn16"></textarea>
-                </div>
-                <input type="submit" value="Next Question">
-                <div class="progress-cont">
-                        <em class="quiz-progress">6%</em>
-                </div>
-        </form>
-        <form class="quiz uk hidden">
-                <div class="form-row">
-                        <label for="qn1">Який один найкорисніший предмет Ви приносите з собою з дому до
-                                університету?</label>
-                        <textarea name="qn1"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn2">Яку локацію в Бидгощі Ви вважаєте найбільш популярною серед студентів?</label>
-                        <textarea name="qn2"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn3">Що Вам допомагало в Ваш перший рік навчання?</label>
-                        <textarea name="qn3"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn4">Що було найскладнішим в Ваш перший рік навчання?</label>
-                        <textarea name="qn4"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn5">Чи був предмет, який Ви залишили або забули вдома, але потім зрозуміли, що він
-                                був насправді необхідним чи корисним на лекціях? Якщо так, то що це за предмет?</label>
-                        <textarea name="qn5"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn6">За якими іншими аспектами університетського життя Ви бажали б бути краще
-                                підготовленими?</label>
-                        <textarea name="qn6"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn7">Як Ви розподіляли час між академічними обов’язками, соціальною діяльністю та
-                                роботою (якщо працюєте)?</label>
-                        <textarea name="qn7"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn8">Які стратегії Ви використовували, щоб подолати стрес та підтримати своє
-                                психічне здоров'я?</label>
-                        <textarea name="qn8"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn9">Наскільки важливим для Вас було мати доступ до наставництва або підказки від
-                                старших студентів чи викладачів?</label>
-                        <textarea name="qn9"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn10">Яку роль у вашому загальному досвіді навчання в університеті відіграли позакласні заходи чи участь у кампусі? (Наприклад: заняття спортом, відвідування тренажерного залу університету)?</label>
-                        <textarea name="qn10"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn11">Як Ви обрали свій курс та визначилися зі спеціальністю або академічним
-                                шляхом?</label>
-                        <textarea name="qn11"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn12">Які були найбільші хибні уявлення у Вас про університетське життя перед
-                                початком навчання?</label>
-                        <textarea name="qn12"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn13">Як Ви справлялися з академічними викликами, такими як складні курси або
-                                іспити?</label>
-                        <textarea name="qn13"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn14">Які методи та ресурси ви використовували для навчання та успіху в навчанні?</label>
-                        <textarea name="qn14"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn15">Як Ви створили мережу підтримки або спільноту у своєму університеті?</label>
-                        <textarea name="qn15"></textarea>
-                </div>
-                <div class="form-row hidden">
-                        <label for="qn16">Які поради Ви б дали новим студентам, щоб допомогти їм підготуватися до
-                                університетського життя?</label>
-                        <textarea name="qn16"></textarea>
-                </div>
-                <input type="submit" value="Наступне питання">
-                <div class="progress-cont">
-                        <em class="quiz-progress">6%</em>
-                </div>
-        </form>
 </body>
 
 </html>

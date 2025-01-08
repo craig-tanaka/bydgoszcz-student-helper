@@ -85,6 +85,6 @@ function createUserDocument(user) {
                 email: userEmail,
                 isAdmin: isAdmin
         }).then(doc => {
-                window.location.href = './home.html'
+                window.location.href = './index.html'
         })
 }
