@@ -1,16 +1,4 @@
 const moduleRow = document.querySelector('.module-row')
-const db = firebase.firestore()
-
-let userID;
-
-firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-                userID = user.uid
-        } else {
-                // todo Show error if user not logged
-        }
-});
-
 
 async function getModulesFromDB() {
         try {

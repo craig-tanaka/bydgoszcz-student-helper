@@ -404,6 +404,17 @@ img.continue-module-img {
 .search-input:focus{
         outline: none;
 }
+a.account-links {
+        color: white;
+        text-decoration: none;
+}
+a.account-links:hover{
+        text-shadow: 1px 1px 3px black;
+}
+a.account-links:first-of-type{
+        margin-right: 1rem;
+}
+
 .account-cont{
         display: flex;
         justify-items: center;
