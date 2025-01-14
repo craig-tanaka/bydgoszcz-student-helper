@@ -260,9 +260,21 @@ body.auth form{
         background:#16265d;
         color: white;
 }
+.register-login-link{
+        color: wheat;
+        font-size: 0.9em;
+        text-decoration: none;
+}
+.register-login-link:hover{
+        text-decoration: underline;
+}
+.register-login-link:active{
+        font-size: 0.85em;
+}
 #register-error-label{
         color: transparent;
         font-weight: 900;
+        text-align: center !important;
 }
 /* #endregion */
 
