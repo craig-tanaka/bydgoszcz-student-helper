@@ -11,7 +11,6 @@ const imgInputElement = document.querySelector('.create-module-input.file')
 const imgInputErrorLabel = document.querySelector('.create-img-cont .input-error-label')
 const imgInputSubmit = document.querySelector('.create-img-cont .img-submit')
 
-const db = firebase.firestore();
 let documentReferenceNumber = null; // id used to identfy module in database
 
 selectImgBtn.addEventListener('click', (event) => {

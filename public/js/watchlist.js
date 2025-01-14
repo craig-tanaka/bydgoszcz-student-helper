@@ -1,15 +1,3 @@
-const db = firebase.firestore()
-let userID;
-
-firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-                userID = user.uid
-                getUserWatchlist(user.uid)
-        } else {
-                // todo Show error if user not logged
-        }
-});
-
 function getUserWatchlist(userID) {
         db.collection('users').doc(userID).get()
                 .then(doc => {

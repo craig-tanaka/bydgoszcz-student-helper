@@ -1,17 +1,6 @@
 const enrollBtn = document.querySelector('.module-enroll')
 const add2WatchListBtn = document.querySelector('button.add-to-watchlist')
 
-const db = firebase.firestore()
-let userID;
-firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-                userID = user.uid
-        } else {
-                // todo Show error if user not logged
-        }
-});
-
-
 //grabs the url query paramters and stores them in variables
 const urlParams = new URLSearchParams(window.location.search)
 const moduleID = urlParams.get('mid')

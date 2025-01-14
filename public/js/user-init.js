@@ -17,7 +17,9 @@ firebase.auth().onAuthStateChanged((user) => {
                                                 <span class="account-name">${userDetails.email}</span>
                                         </span>`
                         })
-                
+                try { // this method is only available in the watchlist.js hence this should on run on watchlist page
+                        getUserWatchlist(user.uid)
+                } catch {}
         } else {
                 // todo Show error if user not logged
         }

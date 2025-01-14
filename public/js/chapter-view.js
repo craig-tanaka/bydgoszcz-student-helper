@@ -5,8 +5,6 @@ const urlParams = new URLSearchParams(window.location.search)
 const moduleID = urlParams.get('mid')
 const chapterNumber = urlParams.get('cid')
 
-const db = firebase.firestore()
-
 db.collection('modules').doc(moduleID).collection('chapters').doc(chapterNumber).get()
         .then(doc => {
                 const title = document.querySelector('.module-description-cont h2')

@@ -8,7 +8,6 @@ const descriptionErrorlabel = document.querySelector('.input-error-label#create-
 const addQuizRadioInput = document.querySelector('.add-quiz-radio-option[value="Yes"]')
 const continueChapterCreationForm = document.querySelector('.continue-creation-form')
 
-const db = firebase.firestore();
 let videoLinkID = '';
 
 //grabs the url query paramters and stores them in variables

@@ -4,7 +4,6 @@ const submitQuizBtn = document.querySelector('input.create-module-submit')
 const quizErrorLabel = document.querySelector('.quiz-form-error-label')
 const continueChapterCreationForm = document.querySelector('.continue-creation-form')
 
-const db = firebase.firestore()
 let numOfQuestions = 1
 let currentQuestion = 1
 
