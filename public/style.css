@@ -264,6 +264,7 @@ body.auth form{
         color: wheat;
         font-size: 0.9em;
         text-decoration: none;
+        margin-right: 1rem;
 }
 .register-login-link:hover{
         text-decoration: underline;
