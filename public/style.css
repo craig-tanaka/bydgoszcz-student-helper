@@ -442,8 +442,22 @@ a.account-links:first-of-type{
         display: flex;
         flex-direction: column;
         color: #88c2e9;
+        position: relative;
 }
-
+button.sign-out{
+        position: absolute;
+        height: 100%;
+        width: 102%;
+        top: 0;
+        right: 0;
+        line-height: 100%;
+        transition: padding 0.3s ease, width 0.3s ease;
+        overflow: hidden;
+}
+button.sign-out.collasped{
+        width: 0;
+        padding: 0;
+}
 /* ___________Hero Module ____________ */
 .hero-module,
 .module-preview{
