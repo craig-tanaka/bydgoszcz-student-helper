@@ -1000,3 +1000,45 @@ button.remove-answer-btn {
         border-radius: 5px;
 }
 /* #endregion watchlist page */
+
+/* #region module-complete */
+.module-complete-cont{
+        width: 70%;
+        margin: 5vh auto 0;
+}
+.module-complete-cont > h2 {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 2rem;
+        width: max-content;
+        margin: 0 auto 1.2rem;
+        font-weight: 900;
+}
+.module-complete-cont .module-cont{
+        position: relative;
+}
+.module-complete-cont .module-img{
+        width: 100%;
+        height: 40vh;
+}
+.module-complete-cont .module-cont .module-name{
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-weight: 900;
+}
+.module-complete-cont .continue{
+        text-decoration: none;
+        background: #155d35;
+        color: white;
+        padding: 0.5rem 1rem;
+        margin-top: 1.5rem;
+        border-radius: 10px 1px 10px 1px;
+        font-weight: 900;
+        letter-spacing: 1px;
+}
+/* #endregion module-complete */

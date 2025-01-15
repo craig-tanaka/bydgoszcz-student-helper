@@ -5,6 +5,8 @@ const urlParams = new URLSearchParams(window.location.search)
 const moduleID = urlParams.get('mid')
 const chapterNumber = urlParams.get('cid')
 
+let numOfChapters;
+
 db.collection('modules').doc(moduleID).collection('chapters').doc(chapterNumber).get()
         .then(doc => {
                 const title = document.querySelector('.module-description-cont h2')
@@ -20,6 +22,12 @@ db.collection('modules').doc(moduleID).collection('chapters').doc(chapterNumber)
                 video.classList.remove('hidden')
         })
 
+db.collection('modules').doc(moduleID).get()
+        .then(doc => {
+                numOfChapters = doc.data().numOfChapters
+        } )
+
 nextChapterBtn.addEventListener('click', event => {
-        window.location.href = `./chapter-view.html?mid=${moduleID}&cid=${Number(chapterNumber) + 1}`
+        if ( numOfChapters && numOfChapters === chapterNumber ) window.location.href = `./module-complete.html?mid=${moduleID}`
+        else window.location.href = `./chapter-view.html?mid=${moduleID}&cid=${Number(chapterNumber) + 1}`
 })
