@@ -83,7 +83,8 @@ function createUserDocument(user) {
         db.collection('users').doc(user.uid).set({
                 name: userName,
                 email: userEmail,
-                isAdmin: isAdmin
+                isAdmin: isAdmin,
+                watchlist: []
         }).then(doc => {
                 window.location.href = './index.html'
         })

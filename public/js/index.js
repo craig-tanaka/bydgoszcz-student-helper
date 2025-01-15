@@ -131,7 +131,8 @@ function checkIfModuleInWatchlist(event) {
                                 clickedBtn.innerHTML = 'User Does Not Exist'
                         }
                 }).catch(error => {
-                        console.error('Error Contact Admin!');
+                        // todo: error watever
+                        console.error(error);
                 });
 }
 
