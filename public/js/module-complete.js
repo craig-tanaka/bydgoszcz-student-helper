@@ -48,6 +48,17 @@ function addToCompletelist() {
         db.collection('users').doc(userID).update({
                 completed: firebase.firestore.FieldValue.arrayUnion(moduleID)
         }).then(() => {
+                incrementCompleters()
+        }).catch(error => {
+                // todo make error 
+                console.error('Error adding value to array:', error);
+        });
+}
+
+function incrementCompleters() {
+        db.collection('modules').doc(moduleID).update({
+                completers: firebase.firestore.FieldValue.increment(1)
+        }).then(() => {
                 window.location.href = './index.html'
         }).catch(error => {
                 // todo make error 
