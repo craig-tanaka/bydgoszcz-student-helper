@@ -84,7 +84,8 @@ function createUserDocument(user) {
                 name: userName,
                 email: userEmail,
                 isAdmin: isAdmin,
-                watchlist: []
+                watchlist: [],
+                completed: []
         }).then(doc => {
                 window.location.href = './index.html'
         })
