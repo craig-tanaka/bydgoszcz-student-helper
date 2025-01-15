@@ -36,6 +36,13 @@ async function setHeroModule(modules) {
         heroAddToWatchlist.addEventListener('click', event => {
                 checkIfModuleInWatchlist(event)
         })
+
+        const startNow = document.querySelector('.hero-button.start-now')
+        startNow.id = modules[randomNum].id
+        startNow.addEventListener('click', event => {
+                const mid = event.target.id
+                window.location.href = `./module.html?mid=${mid}`
+        })
 }
 
 function addModuleToDOM(moduleDoc, imgDoc) {
