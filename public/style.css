@@ -999,6 +999,10 @@ button.remove-answer-btn {
         top: 3.5rem;
         background: #265473;;
 }
+.watchlist-body.completed .module-btn.start{
+        margin-left: 3.5rem;
+        top: 4.5rem;
+}
 .watchlist-body .module-btn.remove{
         top: 6rem;
         margin-left: 2.7rem;

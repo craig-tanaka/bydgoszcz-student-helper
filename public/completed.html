@@ -4,7 +4,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bydgoszcz Student Helper | Create Chapter Quiz</title>
+        <title>Bydgoszcz Student Helper | Your Completed Modules</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
@@ -30,10 +30,10 @@
     -->
         <script defer src="/__/firebase/init.js?useEmulator=false"></script>
         <script defer src="./js/user-init.js"></script>
-        <script defer src="./js/create-chapter-quiz.js"></script>
+        <script defer src="./js/completed.js"></script>
 </head>
 
-<body class="home-main create-module create-chapter-quiz">
+<body class="home-main">
         <aside>
                 <h1>Bydgoszcz Student Helper</h1>
 
@@ -46,7 +46,7 @@
                                 <img src="./img/watchlist-icon.webp" class="sidebar-link-icon">
                                 <span>Watchlist</span>
                         </a>
-                        <a href="./completed.html" class="sidebar-link">
+                        <a href="#" class="sidebar-link">
                                 <img src="./img/Favorite-icon.png" class="sidebar-link-icon">
                                 <span>Completed</span>
                         </a>
@@ -100,65 +100,13 @@
                                 </span>
                         </span>
                 </div>
-                <div class="create-module">
-                        <h2>Create Chapter Quiz</h2>
-                        <div class="create-module-main">
-                                <form id="create-module-main-details" class="">
-                                        <div class="all-questions-container">
-                                                <div class="question-container" id="qn-1">
-                                                        <div class="question-expanded">
-                                                                <div class="form-row">
-                                                                        <label class="form-label">Question <span class="question-number">1</span></label>
-                                                                        <input type="text" class="quiz-question-input">
-                                                                </div>
-                                                                <fieldset class="quiz-answers">
-                                                                        <legend>Answers:</legend>
-                                                                        <div class="question-answers-container">
-                                                                                <input type="text" class="answer-input" id="qn-1-answer-input-1">
-                                                                                <input type="text" class="answer-input" id="qn-1-answer-input-2">
-                                                                                <button class="add-answer-btn">+</button>
-                                                                        </div>
-                                                                </fieldset>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="form-row">
-                                                <label class="quiz-form-error-label hidden">Please fill in all highlighted fields</label>
-                                                <div class="button-row">
-                                                        <button class="add-question-btn">Add Question</button>
-                                                        <input type="submit" class="create-module-submit" value="Submit">
-                                                </div>
-                                        </div>
-                                </form>
-                                <div class="quiz-preview-main-cont">
-                                        <h3>Quiz Preview</h3>
-                                        <div class="questions-preview-cont">
-                                                <div class="question-preview-single" id="preview-qn-1"><p class="question"></p>
-                                                        <fieldset class="question-answers-preview">
-                                                                <div class="preview-answer-cont">
-                                                                        <input type="radio" class="radio-answer-input" ansnum="1" name="preview-ans-1" value="">
-                                                                        <label class="radio-answer-label">...</label>
-                                                                </div>
-                                                                <div class="preview-answer-cont">
-                                                                        <input type="radio" class="radio-answer-input" ansnum="2" name="preview-ans-1" value="">
-                                                                        <label class="radio-answer-label">...</label>
-                                                                </div>
-                                                        </fieldset>
-                                                </div>
-                                        </div>
-                                        <p class="quiz-preview-error-label">Edit your Questions and you can preview the quiz here.</p>
-                                </div>
-                        </div>
-                        <form class="continue-creation-form hidden">
-                                <p>Module Chapter Created, Do You Want To Create Another Chapter?</p>
-                                <span class="form-row">
-                                        <button id="create-another-chapter-btn">Yes</button>
-                                        <button id="dont-create-another-chapter-btn">No</button>
-                                </span>
-                        </form>
+                <div class="watchlist-body completed">
+                        <h2>Your Completed Modules</h2>
+                        <section class="watchlist-modules">
+                        </section>
                 </div>
 
         </main>
 </body>
 
-</htmls
+</html>
