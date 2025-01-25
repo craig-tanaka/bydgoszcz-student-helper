@@ -300,9 +300,11 @@ aside{
         margin-right: 0;
         padding: 0 1.5rem;
         border-radius: 5px;
+
+        position: relative;
 }
 
-
+/* ___________Page-links Section ____________ */
 .sidebar-links-list {
         list-style: none;
         padding: 0;
@@ -322,10 +324,54 @@ aside{
 .sidebar-links-list hr {
         margin-bottom: 2rem;
 }
+
+
+/* ___________Accounts Section ____________ */
+.account-cont{
+        display: flex;
+        justify-items: center;
+        margin: 1rem 0;
+}
+.account-img{
+        border-radius: 50%;
+        width: 2.5rem;
+        height: auto;
+        margin-right: 0.5rem;
+}
+.account-text{
+        display: flex;
+        flex-direction: column;
+        color: #88c2e9;
+        position: relative;
+}
+.account-name{
+        font-weight: 500;
+}
+.account-email{
+        font-style: italic;
+}
+button.sign-out{
+        position: absolute;
+        height: 100%;
+        width: 102%;
+        top: 0;
+        right: 0;
+        line-height: 100%;
+        transition: padding 0.3s ease, width 0.3s ease;
+        overflow: hidden;
+}
+button.sign-out.collasped{
+        width: 0;
+        padding: 0;
+}
+
+/* Continue Modules Section */
 .continue-list-header {
         font-size: 1.1rem;
         font-weight: 600;
+        margin-top: 2rem;
 }
+
 .siderbar-continue-list {
         padding-left: 0;
 }
@@ -364,6 +410,7 @@ img.continue-module-img {
         box-shadow: 1px 1px 3px 0 #00000030;
         background: #152e3f;
 }
+
 /* #endregion sidebar */
 
 /* #region home-main styling */
@@ -382,82 +429,6 @@ img.continue-module-img {
         overflow-y: scroll;
 }
 
-.header-row{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
-}
-.filter-btn{
-        margin: 0;
-}
-.search-cont{
-        background-color: #265473;
-        display: flex;
-        align-items: center;
-        margin: 0 1rem;
-        padding: 15px;
-        border-radius: 15px;
-        width: -webkit-fill-available;
-        max-width: 30rem;
-}
-.search-img{
-        width: 1.5rem;
-        height: auto;
-        margin-right: 5px;
-}
-.search-input{
-        outline: none;
-        padding: 0 1px;
-        border: none;
-        width: 100%;
-        font-size: 1rem;
-        font-weight: 100;
-}
-.search-input:focus{
-        outline: none;
-}
-a.account-links {
-        color: white;
-        text-decoration: none;
-}
-a.account-links:hover{
-        text-shadow: 1px 1px 3px black;
-}
-a.account-links:first-of-type{
-        margin-right: 1rem;
-}
-
-.account-cont{
-        display: flex;
-        justify-items: center;
-}
-.account-img{
-        border-radius: 50%;
-        width: 2.5rem;
-        height: auto;
-        margin-right: 0.5rem;
-}
-.account-text{
-        display: flex;
-        flex-direction: column;
-        color: #88c2e9;
-        position: relative;
-}
-button.sign-out{
-        position: absolute;
-        height: 100%;
-        width: 102%;
-        top: 0;
-        right: 0;
-        line-height: 100%;
-        transition: padding 0.3s ease, width 0.3s ease;
-        overflow: hidden;
-}
-button.sign-out.collasped{
-        width: 0;
-        padding: 0;
-}
 /* ___________Hero Module ____________ */
 .hero-module,
 .module-preview{

@@ -14,7 +14,7 @@ firebase.auth().onAuthStateChanged((user) => {
                                         `<img src="./img/sample-profile-pic.webp" class="account-img">
                                         <span class="account-text">
                                                 <span class="account-name">${userDetails.name}</span>
-                                                <span class="account-name">${userDetails.email}</span>
+                                                <span class="account-email">${userDetails.email}</span>
                                                 <button class="sign-out collasped">Sign Out</button>
                                         </span>`
                                 
