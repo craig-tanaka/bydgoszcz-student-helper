@@ -26,6 +26,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 } catch {}
         } else {
                 // todo Show error if user not logged
+                window.location.href = "./login.html"
         }
 });
 
