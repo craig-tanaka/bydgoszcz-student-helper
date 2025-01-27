@@ -65,3 +65,13 @@ function incrementCompleters() {
                 console.error('Error adding value to array:', error);
         });
 }
+
+//removes module from continue list
+firebase.auth().onAuthStateChanged((user) => {
+        db.collection('continue').doc(userID)
+                .update(
+                        { [moduleID]: firebase.firestore.FieldValue.delete() })
+                .catch((error) => {
+                        //todo: maybe redo the function or something if it fails
+                })
+})
