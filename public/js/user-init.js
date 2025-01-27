@@ -20,6 +20,7 @@ firebase.auth().onAuthStateChanged((user) => {
                                 
                                 const accountText = accountElementsContainer.querySelector('.account-text')
                                 addAccountEventListeners(accountText)
+                                if( userDetails.isAdmin ) addAdminLinks()
                         })
                 getUserContinueList()
                 try { // this method is only available in the watchlist.js hence this should on run on watchlist page
@@ -91,4 +92,18 @@ function addModuleToContinueList(moduleDoc, imgDoc, chapterNum) {
                 <img src="./img/play-icon.png" alt="" class="continue-module-play">`
         
         document.querySelector('.siderbar-continue-list').appendChild(moduleContainer)
+}
+
+function addAdminLinks() {
+        const linksContainer = document.querySelector('.sidebar-links-list')
+
+        let createModuleLink = document.createElement('a')
+        
+        createModuleLink.className = 'sidebar-link'
+        createModuleLink.href = './create-module.html'
+        createModuleLink.innerHTML = 
+                `<img src="./img/create-module.png" class="sidebar-link-icon">
+                <span>Create Module</span>`
+        
+        linksContainer.appendChild(createModuleLink)
 }
