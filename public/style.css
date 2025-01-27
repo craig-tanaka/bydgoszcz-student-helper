@@ -292,7 +292,7 @@ body.auth form{
 }
 
 aside{
-        width: 20rem;
+        width: 25rem;
         background-color: #265473;
         color: white;
         height: calc(100vh - 2rem);
@@ -397,7 +397,7 @@ img.continue-module-img {
 .continue-module-name {
         margin: 0;
         font-weight: 400;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
 }
 .module-bookmark-place {
         font-size: 0.7rem;

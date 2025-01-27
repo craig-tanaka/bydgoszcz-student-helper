@@ -31,3 +31,14 @@ nextChapterBtn.addEventListener('click', event => {
         if ( numOfChapters && numOfChapters === chapterNumber ) window.location.href = `./module-complete.html?mid=${moduleID}`
         else window.location.href = `./chapter-view.html?mid=${moduleID}&cid=${Number(chapterNumber) + 1}`
 })
+
+// Adds and/or updates the user's continue list to have this module and chapter boomark
+firebase.auth().onAuthStateChanged((user) => {
+        db.collection('continue').doc(userID)
+                .set(
+                        { [moduleID]: chapterNumber },
+                        { merge: true })
+                .catch((error) => {
+                        //todo: maybe redo the function or something if it fails
+                });
+})

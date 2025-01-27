@@ -21,6 +21,7 @@ firebase.auth().onAuthStateChanged((user) => {
                                 const accountText = accountElementsContainer.querySelector('.account-text')
                                 addAccountEventListeners(accountText)
                         })
+                getUserContinueList()
                 try { // this method is only available in the watchlist.js hence this should on run on watchlist page
                         getUserWatchlist(user.uid)
                 } catch {}
@@ -47,4 +48,47 @@ function addAccountEventListeners(element) {
                                 console.error('Error signing out:', error);
                         });
                 })
+}
+
+async function getUserContinueList() {
+        const doc = await db.collection('continue').doc(userID).get();
+        if (doc.exists) {
+                const data = doc.data();
+                
+                for (const [moduleID, chapterNum] of Object.entries(data)) {
+                        const moduleDoc = await db.collection('modules').doc(moduleID).get();
+                        const imgDoc = await db.collection('modules').doc(moduleID).collection('images').doc('module-img').get();
+                        
+                        // Add the module to the continue list
+                        addModuleToContinueList(moduleDoc, imgDoc, chapterNum);
+                }
+        } else {
+                // Todo: Handle case when the document doesn't exist
+                console.log('No such document!');
+        }
+}
+
+function addModuleToContinueList(moduleDoc, imgDoc, chapterNum) {
+        let module = moduleDoc.data()
+
+        // Convert the base64 string back into a data URL
+        const imgType = imgDoc.data().imgType
+        const imgData = imgDoc.data().imgData
+        const imgSrc = `data:${imgType};base64,${imgData}`;
+
+        // create module Element
+        let moduleContainer = document.createElement('div')
+        moduleContainer.className = 'continue-module-cont'
+        moduleContainer.id = moduleDoc.id
+        moduleContainer.innerHTML =
+                `<span class="continue-module-details">
+                        <img src="${imgSrc}" alt="" class="continue-module-img">
+                        <span class="continue-module-text">
+                                <h4 class="continue-module-name">${module.name}</h4>
+                                <span class="module-bookmark-place">Chapter ${chapterNum}</span>
+                        </span>
+                </span>
+                <img src="./img/play-icon.png" alt="" class="continue-module-play">`
+        
+        document.querySelector('.siderbar-continue-list').appendChild(moduleContainer)
 }
