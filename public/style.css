@@ -605,6 +605,24 @@ img.continue-module-img {
 /* #endregion Module-preview */
 
 /* #region Module Page */
+.module-page-module-cont{
+        width: 100%;
+}
+.module-page-module-cont .module-hero-img{
+        width: 100%;
+        height: auto;
+}
+.module-page-module-cont .module-description-cont{
+        color: white;
+}
+.module-page-module-cont .module-main-details{
+        text-align: justify;
+}
+.module-page-module-cont .module-sub-details{
+        display: block;
+        width: 40%;
+}
+
 .module-page-module-cont .module-length{
         margin: 0;
         text-align: center;
@@ -643,53 +661,13 @@ img.continue-module-img {
 }
 .module-page-module-cont .module-ctas-row .module-enroll{
         margin-right: 1rem;
+        margin-left: 0;
+}
+.module-page-module-cont .module-ctas-row .add-to-watchlist{
+        margin-right: 0;
 }
 
 /*_______________Tall Image Style____________ */
-.module-page-module-cont.tall{
-        display: flex;
-        width: 100%;
-        height: 100%;
-}
-.module-page-module-cont.tall .module-hero-img{
-        width: 60%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        
-}
-.module-page-module-cont.tall .module-description-cont{
-        /* display: flex; */
-        color: white;
-        margin-left: 1rem;
-}
-.module-page-module-cont.tall .module-main-details{
-        text-align: justify;
-}
-.module-page-module-cont.wide .module-sub-details{
-        margin-top: 0.83em;
-}
-
-
-/*_______________Wide Image Style____________ */
-.module-page-module-cont.wide .module-hero-img{
-        width: 100%;
-        height: 50vh;
-        object-fit: cover;
-        object-position: center;
-        
-}
-.module-page-module-cont.wide .module-description-cont{
-        display: flex;
-        color: white;
-}
-.module-page-module-cont.wide .module-main-details{
-        width: 70%;
-        margin-right: 1rem;
-}
-.module-page-module-cont.wide .module-sub-details{
-        margin-top: 0.83em;
-}
 /* #endregion Module Page */
 
 /* #region Module-view Page */
