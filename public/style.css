@@ -67,7 +67,7 @@ button:active {
         box-shadow: inset 1px 1px 5px 4px black;
 }
 fieldset{
-
+        border-radius: 1rem 0 1rem 0;
 }
 input[type=radio] {
         padding: 0;
@@ -853,6 +853,7 @@ form#create-module-main-details{
         margin-top: 0;
 }
 
+/* _____________add-Quiz______________ */
 .linked-video-cont,
 .quiz-preview-main-cont{
         width: 45%;
@@ -881,7 +882,6 @@ form#create-module-main-details{
 #create-another-chapter-btn{
         background-color: #039be5;
 }
-/* _____________add-Quiz______________ */
 .added-answer-input-cont {
         display: flex;
         background-color: #265473;
@@ -927,6 +927,78 @@ button.remove-answer-btn {
 }
 .quiz-preview-main-cont{
         color: white;
+}
+
+/* _____________Confirm-Quiz______________ */
+.confirm-quiz-header{
+        text-align: center;
+        font-weight: 900;
+        color: white;
+}
+.confirm-quiz-description,
+.error-label{
+        width: max-content;
+        max-width: 80vw;
+        text-align: center;
+        margin: 0 auto;
+        color: white;
+}
+.confirm-quiz{
+        margin: 1.5rem auto;
+}
+.confirm-quiz .question{
+        margin-bottom: 5px;
+}
+.answer-row{
+        display: flex;
+        align-items: baseline;
+}
+.error-label{
+        margin-top: 1rem;
+        display: block;
+        color: #df7272e0;
+}
+
+section.pass-requirements-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: white;
+        background: #1a0801f5;
+}
+.pass-requirements-cont {
+        width: 25rem;
+        margin: 30vh auto;
+        text-align: center;
+        background-color: #265473de;
+        padding: 1rem 1.5rem 2rem;
+        border-radius: 1rem;
+}
+.pass-requirements-description {
+        line-height: 1.5rem;
+        text-align: justify;
+}
+span.pass-requirements-input-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        font-size: 2.2rem;
+}
+.pass-requirements-input-row input[type="number"] {
+        width: 3.7rem;
+        height: 2.5rem;
+        margin-right: 10px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding-right: 7px;
+        outline: none;
+}
+.continue-creation-header{
+        text-align: center;
+        font-weight: 900;
 }
 /* #endregion create-module */
 
