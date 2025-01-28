@@ -63,6 +63,7 @@ const submitButton = document.querySelector('.confirm-quiz-submit')
 submitButton.addEventListener('click', event => {
         if (formIsValid()) {
                 submitButton.classList.add('hidden')
+                document.querySelector('main').scrollTop = 0; // Scrolls to the top
 
                 let answers = []
                 const questions = document.querySelectorAll('.question-cont')
