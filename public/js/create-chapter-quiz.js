@@ -220,8 +220,7 @@ submitQuizBtn.addEventListener('click', (event) => {
         db.collection('modules').doc(moduleID).collection('chapters').doc(chapterNumber).update({
                 quiz: data
         }).then((docRef) => {
-                document.querySelector('.create-module-main').classList.add('hidden')
-                continueChapterCreationForm.classList.remove('hidden')
+                window.location.href = `/confirm-quiz.html?mid=${moduleID}&cid=${chapterNumber}` 
         }).catch((error) => {
                 // alert(error)
                 // console.log(error)
@@ -253,12 +252,3 @@ function validateForm() {
         if (isFormValid) quizErrorLabel.classList.add('hidden')
         return isFormValid
 }
-
-document.querySelector('#create-another-chapter-btn').addEventListener('click', (event) => {
-        event.preventDefault()
-        window.location.href = `./create-module-chapter.html?mid=${moduleID}&cid=${Number(chapterNumber) + 1}`
-})
-document.querySelector('#dont-create-another-chapter-btn').addEventListener('click', (event) => {
-        event.preventDefault()
-        window.location.href = `./module.html?mid=${moduleID}`
-})
