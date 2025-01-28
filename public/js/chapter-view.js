@@ -6,6 +6,7 @@ const moduleID = urlParams.get('mid')
 const chapterNumber = urlParams.get('cid')
 
 let numOfChapters;
+let hasQuiz = false;
 
 db.collection('modules').doc(moduleID).collection('chapters').doc(chapterNumber).get()
         .then(doc => {
@@ -18,6 +19,8 @@ db.collection('modules').doc(moduleID).collection('chapters').doc(chapterNumber)
                 description.innerHTML = doc.data().description
                 video.src = `https://www.youtube.com/embed/${doc.data().videoLinkID}`
 
+                hasQuiz = doc.data().hasQuiz
+
                 tempImg.classList.add('hidden')
                 video.classList.remove('hidden')
         })
@@ -28,8 +31,11 @@ db.collection('modules').doc(moduleID).get()
         } )
 
 nextChapterBtn.addEventListener('click', event => {
-        if ( numOfChapters && numOfChapters === chapterNumber ) window.location.href = `./module-complete.html?mid=${moduleID}`
-        else window.location.href = `./chapter-view.html?mid=${moduleID}&cid=${Number(chapterNumber) + 1}`
+        if (hasQuiz) window.location.href = `./view-chapter-quiz.html?mid=${moduleID}&cid=${chapterNumber}`
+        else {
+                if (numOfChapters && numOfChapters === chapterNumber) window.location.href = `./module-complete.html?mid=${moduleID}`
+                else window.location.href = `./chapter-view.html?mid=${moduleID}&cid=${Number(chapterNumber) + 1}`
+        }
 })
 
 // Adds and/or updates the user's continue list to have this module and chapter boomark

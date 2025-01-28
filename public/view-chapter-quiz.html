@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bydgoszcz Student Helper</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+                rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/10.12.0/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/10.12.0/firebase-auth-compat.js"></script>
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-database-compat.js"></script> -->
+        <script defer src="/__/firebase/10.12.0/firebase-firestore-compat.js"></script>
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-functions-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-messaging-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-storage-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-analytics-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-remote-config-compat.js"></script> -->
+        <!-- <script defer src="/__/firebase/10.12.0/firebase-performance-compat.js"></script> -->
+        <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+        <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+        <script defer src="./js/user-init.js"></script>
+        <script defer src="./js/view-chapter-quiz.js"></script>
+</head>
+
+<body class="home-main">
+        <aside>
+                <h1>Bydgoszcz Student Helper</h1>
+
+                <ul class="sidebar-links-list">
+                        <a href="./index.html" class="sidebar-link">
+                                <img src="./img/home-icon-outlined.png" class="sidebar-link-icon">
+                                <span>Home</span>
+                        </a>
+                        <a href="./watchlist.html" class="sidebar-link">
+                                <img src="./img/watchlist-icon.webp" class="sidebar-link-icon">
+                                <span>Watchlist</span>
+                        </a>
+                        <a href="./completed.html" class="sidebar-link">
+                                <img src="./img/Favorite-icon.png" class="sidebar-link-icon">
+                                <span>Completed</span>
+                        </a>
+                </ul>
+                
+                <hr>
+                <span class="account-cont">
+                </span>
+                <hr>
+
+                <h2 class="continue-list-header">Continue Module</h2>
+                <ul class="siderbar-continue-list">
+                </ul>
+        </aside>
+        <main style="position: relative;">
+                <h2 class="confirm-quiz-header">Attempt Quiz</h2>
+                <p class="confirm-quiz-description">Please Complete The Quiz, To Get to the Next Chapter.</p>
+                <form class="confirm-quiz">
+
+                </form>
+                <button class="confirm-quiz-submit">Submit Answers</button>
+                <label class="error-label hidden">Please Answer all the Highlighted Questions.</label>
+
+                <section class="quiz-results-cont hidden">
+                        <div class="quiz-pass hidden">
+                                <h2 class="quiz-pass-header">Quiz Passed</h2>
+                                <p class="quiz-pass-description">You have passed the quiz, you can now proceed to the next chapter.</p>
+                                <button class="quiz-pass-next">Next Chapter</button>
+                        </div>
+
+                        <div class="quiz-fail hidden">
+                                <h2 class="quiz-fail-header">Quiz Failed</h2>
+                                <span class="score-row">
+                                        <p class="quiz-score">Your Score: <span id="user-score"></span></p>
+                                        <p class="quiz-pass-requirement">Minimum Pass Requirement: <span id="pass-requirement"></span></p>
+                                </span>
+                                <p class="quiz-fail-description">You have failed the quiz, please try again.</p>
+                                <button class="quiz-fail-try-again">Try Again</button>
+                        </div>
+                </section>
+        </main>
+</body>
+
+</html>

@@ -959,7 +959,8 @@ button.remove-answer-btn {
         color: #df7272e0;
 }
 
-section.pass-requirements-overlay {
+section.pass-requirements-overlay,
+.quiz-results-cont {
         position: absolute;
         top: 0;
         left: 0;
@@ -968,7 +969,9 @@ section.pass-requirements-overlay {
         color: white;
         background: #1a0801f5;
 }
-.pass-requirements-cont {
+.pass-requirements-cont,
+.quiz-pass,
+.quiz-fail {
         width: 25rem;
         margin: 30vh auto;
         text-align: center;
@@ -976,7 +979,7 @@ section.pass-requirements-overlay {
         padding: 1rem 1.5rem 2rem;
         border-radius: 1rem;
 }
-.pass-requirements-description {
+.pass-requirements-description{
         line-height: 1.5rem;
         text-align: justify;
 }
@@ -996,9 +999,35 @@ span.pass-requirements-input-row {
         padding-right: 7px;
         outline: none;
 }
-.continue-creation-header{
+.continue-creation-header,
+.quiz-fail-header,
+.quiz-pass-header{
         text-align: center;
         font-weight: 900;
+}
+
+.quiz-pass-description,
+.quiz-fail-description{
+        text-align: center;
+}
+.score-row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.score-row .quiz-score,
+.score-row .quiz-pass-requirement{
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 1rem;
+}
+.score-row .quiz-score{
+        margin-right: 1rem;
+}
+.quiz-fail-description{
+        font-size: 0.85em;
+        margin-top: 0;
+        margin-bottom: 1rem;
 }
 /* #endregion create-module */
 
