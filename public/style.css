@@ -409,6 +409,7 @@ img.continue-module-img {
         border-radius: 50%;
         box-shadow: 1px 1px 3px 0 #00000030;
         background: #152e3f;
+        cursor: pointer;
 }
 
 /* #endregion sidebar */

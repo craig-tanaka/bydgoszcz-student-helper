@@ -91,6 +91,9 @@ function addModuleToContinueList(moduleDoc, imgDoc, chapterNum) {
                 </span>
                 <img src="./img/play-icon.png" alt="" class="continue-module-play">`
         
+        moduleContainer.querySelector('.continue-module-play').addEventListener('click', event => { 
+                window.location.href = `./chapter-view.html?mid=${moduleDoc.id}&cid=${chapterNum}`
+        })
         document.querySelector('.siderbar-continue-list').appendChild(moduleContainer)
 }
 
