@@ -672,16 +672,17 @@ img.continue-module-img {
 
 /* #region Module-view Page */
 .module-view{
-        display: flex;
         color: white;
 }
 
 /* _______________Video view______________ */
-.module-view.video{
-
+.module-view.video h2{
+        font-weight: 900;
+        margin-top: 3rem;
+        margin-bottom: 0;
 }
 .module-view.video .module-view-main{
-        width: 70%;
+        width: 100%;
 }
 .module-view.video .video{
         width: 100%;
@@ -689,86 +690,17 @@ img.continue-module-img {
         object-fit: cover;
         border-radius: 1rem;
 }
-.module-view.video .notes-and-comments-cont{
-
-}
-.module-view.video .comment-react-row {
-        display: flex;
-        justify-content: left;
-}
-
-.module-view.video .comment-react-row> button{
-        margin-left: 0;
-        margin-right: 1rem;
-        padding: 2px 4px;
-        background: transparent;
-        border-radius: 50%;
-        border: 1px solid #ffffff;
-}
-.module-view.video .comment-react-row img{
-        width: 1rem;
-        height: 1rem;
-}
-
-.module-view.video .comment {
-        margin: 0;
-        margin-top: 1.5rem;
-}
-.module-view.video .comment-author {
-        margin: 0;
-        font-size: 0.9rem;
-}
-.module-view.video .actual-comment {
-        margin: 0.2rem 0 0.5rem;
-}
 
 .module-view.video .module-view-sidebar{
-        width: 30%;
-        margin-left: 1rem;
-}
-.module-view.video .module-details {
-        display: table;
         width: 100%;
 }
-
-.module-view.video .module-view-sidebar > *{
-        border: 2px solid gray;
-        border-radius: 10px;
-        padding: 0.5rem 0.7rem;
-        margin: 0;
-}
-.module-details {
-        background-color: white;
-        color: #2f4452;
-}
-.module-view.video tbody,
-.module-view.video .detail{
-        width: 100%;
-}
-
-td.detail-detail {
-        text-align: right;
-}
-.module-view.video .detail-title {
-        font-weight: 500;
-}
-.module-view .tag {
-        background: #1a0801;
-        padding: 5px 10px;
-        border-radius: 5px;
-        margin-right: 5px;
-        margin-bottom: 5px;
-}
-.module-tags {
-        display: flex;
-        flex-wrap: wrap;
-}
-.module-actual-description {
-        margin-top: 0.5rem;
-}
-
-.module-view.video .module-chapters-cont{
+.module-view.video .module-actual-description {
         margin-top: 1rem;
+        line-height: 1.7rem;
+        margin-bottom: 1.7rem;
+}
+.module-view.video .next-chapter-btn {
+        margin: 0;
 }
 /* #endregion Module-view Page */
 
