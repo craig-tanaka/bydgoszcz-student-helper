@@ -611,7 +611,9 @@ img.continue-module-img {
 }
 .module-page-module-cont .module-hero-img{
         width: 100%;
-        height: auto;
+        height: 48vh;
+        object-fit: cover;
+        border-radius: 5px;
 }
 .module-page-module-cont .module-description-cont{
         color: white;
